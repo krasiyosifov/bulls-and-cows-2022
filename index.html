@@ -18,9 +18,17 @@
             n=[d1,d2,d3,d4]
             for (let i=0; i<=3;i++){
                 d1=n[i];
-                for(let j=i+1;)
+                for(let j=i+1;j<=3;j++){
+                    d2=n[j];
+                    if(d1==d2){
+                        return false;
+                    }
+                }
             }
+            return true;
         }
+
+        
     </script>
 </body>
 </html> 
