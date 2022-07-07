@@ -7,11 +7,30 @@
 </head>
 
 <body>
-    <form>
-        <input type="number" id="d1" min="1" max="9">
-        <input type="number" id="d2" min="0" max="9">
-        <input type="number" id="d3" min="0" max="9">
-        <input type="number" id="d4"  min="0" max="9">
-    </form>
+    <input type="text" id="myNumber" minlength="4" maxlength="4" >
+    <p>Click the button to get the number of the number field.</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myNumber").value;
+            console.log(x);
+
+        }
+        function isNumberValid(number) {
+            var n = [d1, d2, d3, d4]
+            for (let i = 0; i <= 3; i++) {
+                d1 = n[i];
+                for (let j = i + 1; j <= 3; j++) {
+                    d2 = n[j];
+                    if (d1 == d2) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    </script>
 </body>
-</html> 
+
+</html>
