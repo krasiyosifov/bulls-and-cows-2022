@@ -1,9 +1,47 @@
+
+.off {
+    display: none !important;
+}
+
 .playerDetails {
 
     display: flex;
     align-content: center;
     justify-content: center;
 
+}
+.buttonPlay {
+    display: inline-block;
+    padding: 14px 50px;
+    font-size: 24px;
+    text-align: center;
+    outline: none;
+    color: #fff;
+    background-color: rgb(139, 139, 139);
+    border: none;
+    border-radius: 1px;
+    box-shadow: 0 9px#474747 ;
+  }
+  
+  .buttonPlay:hover {background-color: #555555}
+  
+  .buttonPlay:active {
+    background-color: #555555;
+    box-shadow: 0 5px #363636;
+    transform: translateY(5px);
+  }
+  .buttons{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+  }
+.homePageImages {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    vertical-align: baseline;
+    font-size: 130px;
 }
 .bullsandcows {
     text-align: center;
@@ -16,25 +54,26 @@
 }
 
 .confirmButton {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
 
 }
 
 .buttonOptions button {
     /*display: flex;
-    justify-content: center;
-    align-items: baseline;
-    flex-direction: row;*/
+    justify-content: end;
+    align-items: baseline;*/
+    flex-direction: row;
     text-align: center;
-    padding: 30px 200px;
-
+    align-items: center;
+    padding: 15px 100px;
+    background-color: beige;
 }
 
-.inputPlayerName {
-    height: 30px;
-    border-width: 1px;
+div {
+    text-align: center;
 }
+
 
 .errorLabel {
     text-align: center;
@@ -54,19 +93,13 @@
 
 }
 
-.detailsName {
+.detailsPlayer {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     flex-direction: column;
 }
 
-.detailsNumber {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    flex-direction: column;
-}
 
 .endGame {
     display: flex;
@@ -90,8 +123,10 @@ form {
     right: 5px;
     top: 5px;
 }
+
 .continueButton {
     position: absolute;
     right: 50px;
     bottom: 0;
 }
+
