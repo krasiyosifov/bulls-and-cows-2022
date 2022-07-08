@@ -75,4 +75,9 @@ form {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     font-size: 50px;
-}
+
+    .closeButton {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
