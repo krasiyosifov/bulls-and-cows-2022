@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="index.css">
     <title>Bulls and Cows game</title>
 </head>
 
@@ -37,6 +38,10 @@
                 }
             }
             return true;
+        }
+
+        function showContainer(containerId) {
+            console.log("container with ID=" + containerId + " must be visible");
         }
     </script>
 
@@ -74,12 +79,11 @@
                 </div>
                 <label class="errorLabel" for="error">Error!</label>
             </form>
-            <button class="howToPlay">?</button>
+            <button class="howToPlay" onclick="showContainer('how_to_play_scene_container')">?</button>
         </div>
     </div>
 
-
-    <div id="winning_page_scene_container" class="scene_container">
+    <div id="winning_page_scene_container" class="scene_container off">
         <!-- here goes the HTML code -->
         <div class="endGame">
             <form>
@@ -96,7 +100,7 @@
         </div>
     </div>
 
-    <div id="how_to_play_scene_container" class="scene_container">
+    <div id="how_to_play_scene_container" class="scene_container off">
         <!-- here goes the HTML code -->
         <h1>How to play?</h1>
         <button class="closeButton" type="button">X
@@ -128,7 +132,8 @@
         <p>If both players win they can press the revenge button and play again.</p>
     </div>
 
-    <div id="player_details_screen_container" class="scene_container">
+    <div id="player_details_screen_container" class="scene_container off">
+
         <!-- here goes the HTML code -->
         <div class="playerDetails">
             <form>
@@ -152,7 +157,8 @@
         </div>
     </div>
 
-    <div id="winning_page_container" class="scene_container">
+    <div id="winning_page_container" class="scene_container off">
+
         <!-- here goes the HTML code -->
         <div class="endGame">
             <form>
