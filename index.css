@@ -49,34 +49,42 @@
 }
 
 .confirmButton {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
 
 }
 
 .buttonOptions button {
     /*display: flex;
-    justify-content: center;
-    align-items: baseline;
-    flex-direction: row;*/
+    justify-content: end;
+    align-items: baseline;*/
+    flex-direction: row;
     text-align: center;
-    padding: 30px 200px;
-
+    align-items: center;
+    padding: 15px 100px;
+    background-color: beige;
 }
 
-.inputPlayerName {
-    height: 30px;
-    border-width: 1px;
+div {
+    text-align: center;
 }
+
 
 .errorLabel {
     text-align: center;
     font-size: small;
+    color: blue;
+    margin-bottom: 20%;
+}
+
+.inputPlayerName {
+    height: 30px;
+    border-width: 2px;
 }
 
 .inputPlayerNumber {
     height: 30px;
-    border-width: 1px;
+    border-width: 2px;
 }
 
 .howToPlay {
@@ -85,19 +93,13 @@
 
 }
 
-.detailsName {
+.detailsPlayer {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     flex-direction: column;
 }
 
-.detailsNumber {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    flex-direction: column;
-}
 
 .endGame {
     display: flex;
@@ -121,10 +123,10 @@ form {
     right: 5px;
     top: 5px;
 }
-.cowImgRotate {
-    transform: rotate(20deg);
-  }
-  .bullImgRotate
-  {
-    transform: rotate(-20deg);
-  }
+
+.continueButton {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+}
+
