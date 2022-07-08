@@ -7,27 +7,30 @@
 </head>
 
 <body>
-    <div class="playerDetails">
-        <form>
-            <div class="detailsPlayer">
-                <label for="name"><b>Enter nickname:</b></label>
-                <div>
-                    <input class="inputPlayerName" type="text" id="name">
-                    <button class="confirmButton" type="button"></button>
+    <div class="mainContainer">
+        <div class="playerDetails">
+            <form class="playerDetailsScene">
+                <div class="detailsPlayer">
+                    <label for="name"><b>Enter nickname:</b></label>
+                    <div class="playerInput">
+                        <input class="inputPlayerName" type="text" id="name">
+                        <button class="confirmButton" type="button">✓</button>
+                    </div>
+                    <label class="errorLabel" for="error"><b>Please enter nickname!</b> </label>
                 </div>
-            </div>
-            <div class="detailsPlayer">
-                <label for="number"><b>Enter number:</b></label>
-                <div>
-                    <input class="inputPlayerNumber" type="text" id="number">
-                    <button class="confirmButton" type="button"></button>
+                <div class="detailsPlayer">
+                    <label for="number"><b>Vicky enter number:</b></label>
+                    <div class="playerInput">
+                        <input class="inputPlayerNumber" type="text" id="number">
+                        <button class="confirmButton" type="button">✓</button>
+                    </div>
+                    <label class="errorLabel" for="error"><b>Error!Ckeck "How to play?".</b> </label>
                 </div>
-            </div>
-            <label class="errorLabel" for="error"><b>Error! Ckeck "How to play?".</b> </label>
-        </form>
-        <button class="howToPlay">?</button>
-    </div>
 
+            </form>
+        </div>
+        <button class="howToPlay"><b>?</b></button>
+    </div>
 </body>
 
 </html>
