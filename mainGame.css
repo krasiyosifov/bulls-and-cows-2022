@@ -4,12 +4,4 @@
     bottom: 0;
 }
 
-.btn-group button {
-    background-color: #F5E787;
-  border: 1px solid red; 
-  color: black;
-  padding: 10px 24px;
-  cursor: pointer;
-  width: 50%;
-  display: block;
-}
+

@@ -1,68 +1,81 @@
 <!DOCTYPE html>
 <html>
    <body>
+    <style>
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 40px;
+      right: 5px;
+    }
+    .howToPlay {
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
     
-    <div class="btn-group">   
-    <button
-    class="continueButton"
-     type="button">CONTINUE
-    </button>
+    </style>
 
+    <div class="btn-group">  
     <button
-    class="button0"
+    class="numberButton"
      type="button">0
     </button>
 
     <button
-    class="button1"
+    class="numberButton"
      type="button">1
     </button>
 
     <button
-    class="button2"
+    class="numberButton"
      type="button">2
     </button>
 
     <button
-    class="button3"
+    class="numberButton"
      type="button">3
     </button>
 
     <button
-    class="button4"
+    class="numberButton"
      type="button">4
     </button>
 
     <button
-    class="button5"
+    class="numberButton"
      type="button">5
     </button>
 
     <button
-    class="button6"
+    class="numberButton"
      type="button">6
     </button>
 
     <button
-    class="button7"
+    class="numberButton"
      type="button">7
     </button>
 
     <button
-    class="button8"
+    class="numberButton"
      type="button">8
     </button>
 
     <button
-    class="button9"
+    class="numberButton"
      type="button">9
     </button>
 
-    <button
+    
+</div>
+
+<button
     class="howToPlay"
      type="button">?
     </button>
-</div>
+
 
     <div class="playerTurn">
         <label for="name">
@@ -74,9 +87,7 @@
                     </button>
                 </div>
             </b>
-        </label>
-        
-
+        </label> 
     <label class="errorLabel" for="error">
         Error! Check
     </label>
@@ -90,6 +101,11 @@
     <img src="images/bullCounter.png" style="width:200px;height:200px;">
     <label class="cowNumber" for="cow">0x</label>
     <img src="images/cowCounter.png" style="width:200px;height:200px;">
+
+    <button
+    class="continueButton"
+     type="button">CONTINUE
+    </button>
 
    </body> 
 </html>

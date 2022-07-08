@@ -83,3 +83,8 @@ form {
     right: 5px;
     top: 5px;
 }
+.continueButton {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+}
