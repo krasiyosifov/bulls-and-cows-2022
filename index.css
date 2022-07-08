@@ -38,12 +38,14 @@
 
 .errorLabel {
     text-align: center;
-    font-size: small;
+    font-size: 16px;
+    color: red;
 }
 
 .inputPlayerNumber {
     height: 30px;
     border-width: 1px;
+    
 }
 
 .howToPlay {
