@@ -4,6 +4,7 @@
 
 <head>
     <title>Bulls and Cows game</title>
+    <link rel="stylesheet" href="index.css"/>
 </head>
 
 <body>
@@ -41,20 +42,29 @@
     </script>
 
     <div id="home_scene_container" class="scene_container">
+
         
-        <div class = "bullsandcows">
-            <h2 >Bulls
-            <div>
-            <img src ="images/bullHomeScreen.png"  width="150" height="150">  
-             & 
-            <img src ="images/cowHomeScreen.png"  width="150" height="150"></div>
-            Cows</h2> 
+    <div id="home_scene_container" class="scene_container">
+
+        <div class="bullsandcows">
+            <h2>Bulls
+                <div class="homePageImages">
+
+                    <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
+                    &
+                    <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
+
+                </div>
+                Cows
+            </h2>
         </div>
-        <div >
-            <button>New Game</button>
-            <button>How to play</button>
+        <div class = "buttons">
+            <button class="buttonPlay" >New Game</button>
+            <button class="buttonPlay" >How to play</button>
         </div>
     </div>
+    </div>
+
 
 
     <div id="player_details_scene_container" class="scene_container">
@@ -80,7 +90,6 @@
             <button class="howToPlay">?</button>
         </div>
     </div>
-
 
     <div id="winning_page_scene_container" class="scene_container">
         <!-- here goes the HTML code -->
