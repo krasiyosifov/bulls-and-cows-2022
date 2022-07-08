@@ -3,50 +3,14 @@
 <html>
 
 <head>
-    <title>Bulls and Cows game</title>
+
+    <title>Bulls & Cows</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <input type="text" id="my_number" minlength="4" maxlength="4" value="1234">
-    <p>Click the button to get the number of the number field.</p>
-    <button onclick="myFunction()">Try it</button>
-    <p id="validation_result">no validation yet</p>
-    <script>
-        function myFunction() {
-            var numberValue = document.getElementById("my_number").value;
-            console.log(numberValue);
-            if (isNumberValid(numberValue)) {
-                console.log("the number is valid");
-                // TODO: put the result in the validation_result container
-            } else {
-                console.log("the number is invalid");
-                // TODO: put the result in the validation_result container
-            }
-        }
 
-        function isNumberValid(numberAsString) {
-            var digits = numberAsString.split("");
-            console.log(digits);
-            for (let i = 0; i <= 3; i++) {
-                d1 = digits[i];
-                for (let j = i + 1; j <= 3; j++) {
-                    d2 = digits[j];
-                    if (d1 == d2) {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-    </script>
-
-    <div id="home_scene_container" class="scene_container">
-        <!-- here goes the HTML code -->
-    </div>
-
-    <div id="how_to_play_scene_container" class="scene_container">
-        <!-- here goes the HTML code -->
-        <h1>How to play?</h1>
+    <h1>How to play?</h1>
     <button
     class="closeButton"
      type="button">X
@@ -72,7 +36,6 @@
     <p>In the top right corner there is a question button. If you need to check the rules of the game again you can
         press it.</p>
     <p>If both players win they can press the revenge button and play again.</p>
-    </div>
 
 </body>
 
