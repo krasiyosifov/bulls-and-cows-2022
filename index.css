@@ -5,6 +5,11 @@
     justify-content: center;
 
 }
+.bullsandcows {
+    text-align: center;
+    font-size: 75px;
+}
+
 
 .winningLabels {
     text-align: center;
@@ -78,6 +83,7 @@ form {
     transform: translateY(-50%);
     font-size: 50px;
 }
+
 
 .closeButton {
     position: absolute;
