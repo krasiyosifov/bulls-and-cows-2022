@@ -1,0 +1,78 @@
+.playerDetails {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.winningLabels {
+    text-align: center;
+}
+
+.confirmButton {
+    width: 30px;
+    height: 30px;
+
+}
+
+.buttonOptions button {
+    /*display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: row;*/
+    text-align: center;
+    padding: 30px 200px;
+
+}
+
+.inputPlayerName {
+    height: 30px;
+    border-width: 1px;
+}
+
+.errorLabel {
+    text-align: center;
+    font-size: small;
+}
+
+.inputPlayerNumber {
+    height: 30px;
+    border-width: 1px;
+}
+
+.howToPlay {
+    width: 30px;
+    height: 30px;
+
+}
+
+.detailsName {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+.detailsNumber {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+.endGame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 50px;
+}
