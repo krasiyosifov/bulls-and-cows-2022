@@ -5,6 +5,7 @@
 <head>
     <link rel="stylesheet" href="index.css">
     <title>Bulls and Cows game</title>
+    <link rel="stylesheet" href="index.css"/>
 </head>
 
 <body>
@@ -84,16 +85,28 @@
 
     <div id="home_scene_container" class="scene_container">
 
+        
+    <div id="home_scene_container" class="scene_container">
+
         <div class="bullsandcows">
-            <h2>Bulls</h2>
-            <img src="bull.jpg" width="50" height="50">
-            <h2>&</h2>
-            <img src="bull.jpg" width="50" height="50">
-            <h2>Cows</h2>
+            <h2>Bulls
+                <div class="homePageImages">
+
+                    <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
+                    &
+                    <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
+
+                </div>
+                Cows
+            </h2>
         </div>
-        <button onclick="showContainer('player_details_scene_container')">New Game</button>
-        <button onclick="showContainer('how_to_play_scene_container')">How to play</button>
+        <div class = "buttons">
+            <button class="buttonPlay" onclick="showContainer('player_details_scene_container')">New Game</button>
+            <button class="buttonPlay" onclick="showContainer('how_to_play_scene_container')">How to play</button>
+        </div>
     </div>
+    </div>
+
 
 
     <div id="player_details_scene_container" class="scene_container off">
@@ -102,13 +115,14 @@
 
         <div class="playerDetails">
             <form>
-                <div class="detailsName">
+                <div class="detailsPlayer">
                     <label for="name"><b>Enter nickname:</b></label>
                     <div>
                         <input class="inputPlayerName" type="text" id="playerName">
                         <button class="confirmButton" type="button" onclick="checkNameAndContinue()"></button>
                     </div>
                 </div>
+                
                 <p class="error off" id="playerDetailsNameError">Please enter your nickname</p>
                 <div class="detailsNumber off" id="number_container">
                     <label for="number"><b>Enter number:</b></label>
@@ -174,11 +188,13 @@
         <p>If both players win they can press the revenge button and play again.</p>
     </div>
 
+
     <div id="main_game_screen_container" class="scene_container off">
 
         <!-- here goes the HTML code -->
         main game
     </div>
+
 
 </body>
 

@@ -1,9 +1,111 @@
 <!DOCTYPE html>
 <html>
    <body>
+    <style>
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 40px;
+      right: 5px;
+    }
+    .howToPlay {
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+    
+    </style>
+
+    <div class="btn-group">  
+    <button
+    class="numberButton"
+     type="button">0
+    </button>
+
+    <button
+    class="numberButton"
+     type="button">1
+    </button>
+
+    <button
+    class="numberButton"
+     type="button">2
+    </button>
+
+    <button
+    class="numberButton"
+     type="button">3
+    </button>
+
+    <button
+    class="numberButton"
+     type="button">4
+    </button>
+
+    <button
+    class="numberButton"
+     type="button">5
+    </button>
+
+    <button
+    class="numberButton"
+     type="button">6
+    </button>
+
+    <button
+    class="numberButton"
+     type="button">7
+    </button>
+
+    <button
+    class="numberButton"
+     type="button">8
+    </button>
+
+    <button
+    class="numberButton"
+     type="button">9
+    </button>
+
+    
+</div>
+
+<button
+    class="howToPlay"
+     type="button">?
+    </button>
+
+
+    <div class="playerTurn">
+        <label for="name">
+            <b>
+                Player1's turn:
+                <div>
+                    <input class="inputPlayerNumber" type="text" id="number">
+                    <button class="confirmButton" type="button">m
+                    </button>
+                </div>
+            </b>
+        </label> 
+    <label class="errorLabel" for="error">
+        Error! Check
+    </label>
+
+    <label class="errorLabel" for="error">
+        <a href=HTP.html>How To Play?</a>
+    </label>
+    </div>
+
+    <label class="bullNumber" for="bull">4x</label>
+    <img src="images/bullCounter.png" style="width:200px;height:200px;">
+    <label class="cowNumber" for="cow">0x</label>
+    <img src="images/cowCounter.png" style="width:200px;height:200px;">
+
     <button
     class="continueButton"
      type="button">CONTINUE
     </button>
+
    </body> 
 </html>
