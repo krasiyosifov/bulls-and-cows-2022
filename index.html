@@ -3,14 +3,13 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="index.css">
     <title>Bulls and Cows game</title>
+    <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-    <input type="text" id="my_number" minlength="4" maxlength="4" value="1234">
-    <p>Click the button to get the number of the number field.</p>
-    <button onclick="myFunction()">Try it</button>
-    <p id="validation_result">no validation yet</p>
+
     <script>
         function myFunction() {
             var numberValue = document.getElementById("my_number").value;
@@ -38,28 +37,79 @@
             }
             return true;
         }
+
+        let lastShownContainer = "home_scene_container";
+        function showContainer(containerId) {
+            console.log("container with ID=" + containerId + " must be visible");
+            if (lastShownContainer != "") {
+                document.getElementById(lastShownContainer).classList.add("off");
+            }
+            document.getElementById(containerId).classList.remove("off");
+            lastShownContainer = containerId;
+        }
+
+        function checkNumberAndContinue() {
+            //read the number from the form field
+            var numberValue = document.getElementById("my_number").value;
+            console.log(numberValue);
+
+            //check if the number is valid
+            if (isNumberValid(numberValue) == true) {
+                //if valid goes to the next person or main game scene
+                showContainer('main_game_screen_container')
+
+                console.log("the number is valid");
+                // TODO: put the result in the validation_result container
+            }
+            else {
+                //if invalid shows error
+                document.getElementById("playerDetailsNumberError").classList.remove("off");
+                console.log("the number is invalid");
+
+                // TODO: put the result in the validation_result container
+            }
+        }
+
+        function checkNameAndContinue() {
+            var playerName = document.getElementById("playerName").value;
+            if (playerName != "") {
+                document.getElementById("number_container").classList.remove("off");
+                document.getElementById("playerDetailsNameError").classList.add("off");
+            }
+            else {
+                document.getElementById("playerDetailsNameError").classList.remove("off");
+            }
+        }
+
     </script>
 
     <div id="home_scene_container" class="scene_container">
 
-        <div class="bullsandcows">
-            <h2>Bulls
-                <div>
-                    <img src="images/bullHomeScreen.png" width="150" height="150">
-                    &
-                    <img src="images/cowHomeScreen.png" width="150" height="150">
-                </div>
-                Cows
-            </h2>
-        </div>
-        <div>
-            <button>New Game</button>
-            <button>How to play</button>
+
+        <div id="home_scene_container" class="scene_container">
+
+            <div class="bullsandcows">
+                <h2>Bulls
+                    <div class="homePageImages">
+
+                        <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
+                        &
+                        <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
+
+                    </div>
+                    Cows
+                </h2>
+            </div>
+            <div class="buttons">
+                <button class="buttonPlay" onclick="showContainer('player_details_scene_container')">New Game</button>
+                <button class="buttonPlay" onclick="showContainer('how_to_play_scene_container')">How to play</button>
+            </div>
         </div>
     </div>
 
 
-    <div id="player_details_scene_container" class="scene_container">
+
+    <div id="player_details_scene_container" class="scene_container off">
         <!-- here goes the HTML code -->
         <div class="mainContainer">
             <div class="playerDetails">
@@ -67,28 +117,29 @@
                     <div class="detailsPlayer">
                         <label for="name"><b>Enter nickname:</b></label>
                         <div class="playerInput">
-                            <input class="inputPlayerName" type="text" id="name">
-                            <button class="confirmButton" type="button">✓</button>
+                            <input class="inputPlayerName" type="text" id="playerName">
+                            <button class="confirmButton" type="button" onclick="checkNameAndContinue()">✓</button>
                         </div>
-                        <label class="errorLabel" for="error"><b>Please enter nickname!</b> </label>
+                        <p class="errorLabel off" id="playerDetailsNameError">Please enter your nickname</p>
                     </div>
-                    <div class="detailsPlayer">
+                    <div class="detailsPlayer off" id="number_container">
                         <label for="number"><b>Vicky enter number:</b></label>
                         <div class="playerInput">
-                            <input class="inputPlayerNumber" type="text" id="number">
-                            <button class="confirmButton" type="button">✓</button>
+                            <input class="inputPlayerNumber" type="text" id="my_number" minlength="4" maxlength="4">
+                            <button class="confirmButton" type="button" onclick="checkNumberAndContinue()">✓</button>
                         </div>
-                        <label class="errorLabel" for="error"><b>Error!Ckeck "How to play?".</b> </label>
+                        <p class="errorLabel off" id="playerDetailsNumberError">Invalid number! Try again!</p>
+                        <button class="howToPlay" onclick="showContainer('how_to_play_scene_container')">?</button>
                     </div>
 
                 </form>
             </div>
             <button class="howToPlay"><b>?</b></button>
+
         </div>
     </div>
 
-
-    <div id="winning_page_scene_container" class="scene_container">
+    <div id="winning_page_scene_container" class="scene_container off">
         <!-- here goes the HTML code -->
         <div class="endGame">
             <form>
@@ -97,18 +148,20 @@
                     <label for="winner"><b>...</b></label>
                 </div>
                 <div class="buttonOptions">
-                    <button type="button" id="revengeButton">REVENGE</button>
-                    <button type="button" id="newGameButton">NEW GAME</button>
-                    <button type="button" id="exitButton">EXIT</button>
+                    <button type="button" id="revengeButton"
+                        onclick="showContainer('player_details_scene_container')">REVENGE</button>
+                    <button type="button" id="newGameButton"
+                        onclick="showContainer('player_details_scene_container')">NEW GAME</button>
+                    <button type="button" id="exitButton" onclick="showContainer('home_scene_container')">EXIT</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <div id="how_to_play_scene_container" class="scene_container">
+    <div id="how_to_play_scene_container" class="scene_container off">
         <!-- here goes the HTML code -->
         <h1>How to play?</h1>
-        <button class="closeButton" type="button">X
+        <button class="closeButton" type="button" onclick="showContainer('home_scene_container')">X
 
         </button>
 
@@ -138,6 +191,11 @@
     </div>
 
 
+    <div id="main_game_screen_container" class="scene_container off">
+
+        <!-- here goes the HTML code -->
+        main game
+    </div>
 
 
 </body>
