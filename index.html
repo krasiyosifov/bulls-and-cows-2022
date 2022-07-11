@@ -22,6 +22,10 @@
             }
         }
 
+        function openPlayer2Details() {
+
+        }
+
         function isNumberValid(numberAsString) {
             var digits = numberAsString.split("");
             console.log(digits);
@@ -144,8 +148,13 @@
                 </h2>
             </div>
             <div class="buttons">
+<<<<<<< HEAD
                 <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
                 <button class="buttonPlay" onclick="showContainer('how_to_play_scene_container')">How to play</button>
+=======
+                <button class="buttonPlay" onclick="showContainer('player_details_scene_container')">New Game</button>
+                <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
+>>>>>>> 32988ea5db169d55b95aaeb21f3ec7a4050a84cc
             </div>
         </div>
     </div>
@@ -171,8 +180,13 @@
                             <input class="inputPlayerNumber" type="text" id="player_number" minlength="4" maxlength="4">
                             <button class="confirmButton" type="button" onclick="checkNumberAndContinue()">✓</button>
                         </div>
+<<<<<<< HEAD
                         <p class="errorLabel off" id="player_details_number_error">Invalid number! Try again!</p>
                         <button class="howToPlay" onclick="showContainer('how_to_play_scene_container')">?</button>
+=======
+                        <p class="errorLabel off" id="playerDetailsNumberError">Invalid number! Try again!</p>
+                        <button class="howToPlay" onclick="openModal()">?</button>
+>>>>>>> 32988ea5db169d55b95aaeb21f3ec7a4050a84cc
                     </div>
 
                 </form>
@@ -201,42 +215,70 @@
         </div>
     </div>
 
-    <div id="how_to_play_scene_container" class="scene_container off">
+    <div id="how_to_play_scene_container" class="scene_container howToPlayModal ">
         <!-- here goes the HTML code -->
-        <h1>How to play?</h1>
-        <button class="closeButton" type="button" onclick="showContainer('home_scene_container')">X
+        <script>
+            var modalHowToPlay = document.getElementById("how_to_play_scene_container");
+            var btn = document.getElementById("how_to_play");
 
-        </button>
+            function openModal() {
+                modalHowToPlay.style.display = "block";
+                console.log(modalHowToPlay);
+            }
+            if (modalHowToPlay) {
+                window.onclick = function (event) {
+                    if (event.target == modalHowToPlay) {
+                        modalHowToPlay.style.display = "none";
+                    }
+                }
+            }
+            function closeModal() {
+                modalHowToPlay.style.display = "none";
+            }
+        </script>
+        <div class="modal-content">
+            <h1>How to play?</h1>
+            <button class="closeButton" type="button" onclick="closeModal()">X</button>
+            <p>The game can be played by 2 people.</p>
+            <p>First, Player1 enters their name and clicks the check button when they are done. After that a new text
+                field
+                appears where the player should input their chosen number, which should be kept secret from the other
+                player.
+                The digits must be all different. The number cannot start with 0. The number must have 4 digits. Same
+                thing
+                happens for Player2. </p>
+            <p>Then, in turn, the players try to guess their opponent's number by inputting it in the four digit text
+                field.
+                The
+                digits of the guessing number also must all be different. If the matching digits exist and are in their
+                right
+                positions, they are "bulls", if not, they are "cows". </p>
+            <p>Example:</p>
+            <ul>
+                <li>P1’s number: 4271</li>
+                <li>P2’s guessing number: 1234</li>
+                <li>Answer: 1 bull and 2 cows. (The bull is "2", the cows are "4" and "1".)</li>
+            </ul>
+            <p>After the first round a list, which contains the already used guessing numbers, will appear in top left
+                corner.
+                On the right the player can look at the numbers from 1 to 9 and check which one is not needed anymore.
+            </p>
+            <p>In the top right corner there is a question button. If you need to check the rules of the game again you
+                can
+                press it.</p>
+            <p>If both players win they can press the revenge button and play again.</p>
 
-        <p>The game can be played by 2 people.</p>
-        <p>First, Player1 enters their name and clicks the check button when they are done. After that a new text field
-            appears where the player should input their chosen number, which should be kept secret from the other
-            player.
-            The digits must be all different. The number cannot start with 0. The number must have 4 digits. Same thing
-            happens for Player2. </p>
-        <p>Then, in turn, the players try to guess their opponent's number by inputting it in the four digit text field.
-            The
-            digits of the guessing number also must all be different. If the matching digits exist and are in their
-            right
-            positions, they are "bulls", if not, they are "cows". </p>
-        <p>Example:</p>
-        <ul>
-            <li>P1’s number: 4271</li>
-            <li>P2’s guessing number: 1234</li>
-            <li>Answer: 1 bull and 2 cows. (The bull is "2", the cows are "4" and "1".)</li>
-        </ul>
-        <p>After the first round a list, which contains the already used guessing numbers, will appear in top left
-            corner.
-            On the right the player can look at the numbers from 1 to 9 and check which one is not needed anymore.</p>
-        <p>In the top right corner there is a question button. If you need to check the rules of the game again you can
-            press it.</p>
-        <p>If both players win they can press the revenge button and play again.</p>
+        </div>
+    </div>
     </div>
 
 
     <div id="main_game_screen_container" class="scene_container off">
 
         <!-- here goes the HTML code -->
+        <script>
+            
+        </script>
         <div class="mainContainer">
             <div class="btn-group">
                 <button class="numberButton" type="button">0</button>
@@ -274,7 +316,7 @@
                         </label>
 
                         <label class="errorLabel" for="error">
-                            <a href=HTP.html>How To Play?</a>
+                            <a href="#" onclick="openModal()">How To Play?</a>
                         </label>
                     </div>
                     <div>
