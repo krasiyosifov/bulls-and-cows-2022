@@ -49,20 +49,27 @@
             let aDigits = a.split("");
             let bDigits = b.split("");
 
-            console.log(aDigits);
-            console.log(bDigits);
-
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 4; j++) {
+                    if (aDigits[i] == bDigits[j]) {
+                        if (i == j) {
+                            result.bulls++;
+                        }
+                        else {
+                            result.cows++;
+                        }
+                        break;
+                    }
+                }
+            }
             
-//            result.cows++;
 
             return result;
         }
 
-        console.log(calculateBullsAndCows('1567','1763'));
 
         let lastShownContainer = "home_scene_container";
         function showContainer(containerId) {
-            console.log("container with ID=" + containerId + " must be visible");
             if (lastShownContainer != "") {
                 document.getElementById(lastShownContainer).classList.add("off");
             }
