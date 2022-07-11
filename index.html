@@ -149,7 +149,7 @@
             </div>
             <div class="buttons">
                 <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
-                <button class="buttonPlay" onclick="openModal()">How to play</button>
+                <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
             </div>
         </div>
     </div>
@@ -175,7 +175,7 @@
                             <input class="inputPlayerNumber" type="text" id="player_number" minlength="4" maxlength="4">
                             <button class="confirmButton" type="button" onclick="checkNumberAndContinue()">✓</button>
                         </div>
-                        <p class="errorLabel off" id="playerDetailsNumberError">Invalid number! Try again!</p>
+                        <p class="errorLabel off" id="player_details_number_error">Invalid number! Try again!</p>
                         <button class="howToPlay" onclick="openModal()">?</button>
                     </div>
 
