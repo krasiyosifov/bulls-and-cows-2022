@@ -29,10 +29,13 @@
         function isNumberValid(numberAsString) {
             var digits = numberAsString.split("");
             console.log(digits);
-            for (let i = 0; i <= 3; i++) {
-                d1 = digits[i];
+            if (digits.length != 4) {
+                return false;
+            }
+            for (let i = 0; i <= 2; i++) {
+                let d1 = digits[i];
                 for (let j = i + 1; j <= 3; j++) {
-                    d2 = digits[j];
+                    let d2 = digits[j];
                     if (d1 == d2) {
                         return false;
                     }
@@ -41,7 +44,7 @@
             return true;
         }
 
-        function calculateBullsAndCows(a, b){
+        function calculateBullsAndCows(a, b) {
             let result = {
                 bulls: 0,
                 cows: 0
@@ -52,13 +55,13 @@
             console.log(aDigits);
             console.log(bDigits);
 
-            
-//            result.cows++;
+
+            //            result.cows++;
 
             return result;
         }
 
-        console.log(calculateBullsAndCows('1567','1763'));
+        console.log(calculateBullsAndCows('1567', '1763'));
 
         let lastShownContainer = "home_scene_container";
         function showContainer(containerId) {
@@ -193,7 +196,7 @@
                     <div class="detailsPlayer">
                         <label for="name"><b>Enter nickname:</b></label>
                         <div class="playerInput">
-                            <input class="inputPlayerName" type="text"  id="player_name">
+                            <input class="inputPlayerName" type="text" id="player_name">
                             <button class="confirmButton" type="button" onclick="checkNameAndContinue()">✓</button>
                         </div>
                         <p class="errorLabel off" id="player_details_name_error">Please enter your nickname</p>
@@ -296,12 +299,76 @@
 
         <!-- here goes the HTML code -->
         <script>
+            var mainPlayerGuesses = [
+                '',
+                ''
+            ]
+            function prepareMainPlayerGuessesUI(playerIndex) {
+                document.getElementById("main_player_details_number_error").classList.add("off");
+                document.getElementById("player_guess_number").value = "";
+                document.getElementById("player_span").innerHTML = playerNames[currentPlayerIndex]
+            }
+            if (document.getElementById("player_span")){
+                document.getElementById("player_span").innerHTML = playerNames[currentPlayerIndex]
+            }
+            function checkGuessesAndContinue() {
+                    //read the number from the form field
+                    var numberValue = document.getElementById("player_guess_number").value;
+                    console.log(numberValue);
+                    console.log(currentPlayerIndex);
+
+                    //check if the number is valid
+                    if (isNumberValid(numberValue) == true) {
+                        // save player number into playerNumbers
+                        mainPlayerGuesses[currentPlayerIndex] = numberValue;
+
+                        if (currentPlayerIndex == 0) {
+                            // next player's turn
+                            currentPlayerIndex = 1;
+                            // prepare UI
+                            prepareMainPlayerGuessesUI(currentPlayerIndex);
+                        } else {
+                            currentPlayerIndex = 0;
+                            prepareMainPlayerGuessesUI(currentPlayerIndex);
+
+                        }
+
+                        // //if valid goes to the next person or main game scene
+                        //
+                    }
+                    else {
+                        //if invalid shows error
+                        document.getElementById("player_details_number_error").classList.remove("off");
+                    }
+                    focusName();
+                }
+
+            function inputPlayerGuess() {
+                var numberValue = document.getElementById("player_guess_number").value;
+
+                console.log(mainPlayerGuesses);
+                console.log(numberValue);
+                if (isNumberValid(numberValue)) {
+                    document.getElementById("main_player_details_number_error").classList.add("off");
+                    document.getElementById("continue_button").classList.remove("off");
+                    
+                    console.log("the number is valid");
+                    onInputEntered(numberValue)
+                    // TODO: put the result in the validation_result container
+                } else {
+                    document.getElementById("continue_button").classList.add("off");
+                    console.log("the number is invalid");
+                    let errorLabel = document.getElementById("main_player_details_number_error");
+                    errorLabel.classList.remove("off");
+                    // TODO: put the result in the validation_result container
+                }
+            }
+
             var historyNumbers = [];
-            function onInputEntered() {
-                var inputNumber = document.getElementById("my_number");
+            function onInputEntered(numberValue) {
                 //takes the number from the last input field
-                console.log(inputNumber.value);
-                historyNumbers.push(inputNumber.value);
+                console.log(numberValue);
+                historyNumbers.push(numberValue);
                 historyNumbersList();
                 console.log(historyNumbers);
             }
@@ -350,19 +417,18 @@
                     <div class="playerTurn">
                         <label for="name">
                             <b>
-                                <span>Player1</span>'s turn:
+                                <span id="player_span">Player1</span>'s turn:
                                 <div>
-                                    <input class="inputPlayerNumber" type="text" id="my_number">
-                                    <button class="confirmButton" type="button" onclick="onInputEntered()">✓
+                                    <input class="inputPlayerNumber" type="text" id="player_guess_number">
+                                    <button class="confirmButton" type="button" onclick="inputPlayerGuess()">✓
                                     </button>
                                 </div>
                             </b>
                         </label>
-                        <p class="errorLabel off" id="playerDetailsNumberError">Invalid number! Try again!</p>
-                        </br>
-                        <label class="errorLabel" for="error">
+                        <p class="errorLabel off" id="main_player_details_number_error">Invalid number! Try again!
+                            </br>
                             <a href="#" onclick="openModal()">How To Play?</a>
-                        </label>
+                        </p>
                     </div>
                     <div>
                         <label class="bullNumber" for="bull">4x</label>
@@ -372,7 +438,7 @@
                     </div>
                 </div>
                 <div>
-                    <button class="continueButton" type="button">CONTINUE
+                    <button class="continueButton off" id="continue_button" type="button" onclick="checkGuessesAndContinue()">CONTINUE
                     </button>
                 </div>
 
