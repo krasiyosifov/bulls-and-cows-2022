@@ -219,9 +219,37 @@
 
         <!-- here goes the HTML code -->
         <script>
-            
+            var historyNumbers = [];
+            function onInputEntered() {
+                var inputNumber = document.getElementById("my_number");
+                //takes the number from the last input field
+                console.log(inputNumber.value);
+                historyNumbers.push(inputNumber.value);
+                historyNumbersList();
+                console.log(historyNumbers);
+            }
+            function historyNumbersList() {
+                var historyElement = document.getElementById("history_numbers");
+                historyElement.innerHTML = "";
+                var historySpan;
+                historyNumbers.forEach(element => {
+                    historySpan = document.createElement("span");
+                    historySpan.innerHTML = element;
+                    historyElement.appendChild(historySpan);
+                    console.log(historySpan);
+                })
+            }
         </script>
         <div class="mainContainer">
+            <div id="history_numbers" style="display: flex;
+            flex-direction: column;
+            width: fit-content;
+            position: absolute;
+            left: 10px;
+            padding: 5px;
+            background: white;
+            top:10px;">
+            </div>
             <div class="btn-group">
                 <button class="numberButton" type="button">0</button>
                 <button class="numberButton" type="button">1</button>
@@ -247,16 +275,14 @@
                             <b>
                                 Player1's turn:
                                 <div>
-                                    <input class="inputPlayerNumber" type="text" id="number">
-                                    <button class="confirmButton" type="button">✓
+                                    <input class="inputPlayerNumber" type="text" id="my_number">
+                                    <button class="confirmButton" type="button" onclick="onInputEntered()">✓
                                     </button>
                                 </div>
                             </b>
                         </label>
-                        <label class="errorLabel" for="error">
-                            Error! Check
-                        </label>
-
+                        <p class="errorLabel off" id="playerDetailsNumberError">Invalid number! Try again!</p>
+                        </br>
                         <label class="errorLabel" for="error">
                             <a href="#" onclick="openModal()">How To Play?</a>
                         </label>
