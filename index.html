@@ -41,6 +41,25 @@
             return true;
         }
 
+        function calculateBullsAndCows(a, b){
+            let result = {
+                bulls: 0,
+                cows: 0
+            };
+            let aDigits = a.split("");
+            let bDigits = b.split("");
+
+            console.log(aDigits);
+            console.log(bDigits);
+
+            
+//            result.cows++;
+
+            return result;
+        }
+
+        console.log(calculateBullsAndCows('1567','1763'));
+
         let lastShownContainer = "home_scene_container";
         function showContainer(containerId) {
             console.log("container with ID=" + containerId + " must be visible");
