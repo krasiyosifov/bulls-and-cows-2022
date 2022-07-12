@@ -390,6 +390,11 @@
                     console.log(historySpan);
                 })
             }
+
+            function numberButtonClicked(event){
+                console.log(event.target)
+                event.target.classList.add("buttonStrikeThrough");
+            }
         </script>
 
         <div class="mainContainer">
@@ -403,7 +408,7 @@
             top:10px;">
             </div>
             <div class="btn-group">
-                <button class="numberButton" type="button">0</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">0</button>
                 <button class="numberButton" type="button">1</button>
                 <button class="numberButton" type="button">2</button>
                 <button class="numberButton" type="button">3</button>
