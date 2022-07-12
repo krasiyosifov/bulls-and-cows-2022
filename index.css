@@ -3,11 +3,12 @@
 }
 
 .playerDetails {
-
+    height: 50vh;
+    width: 50vw;
+    background-color: rgb(251, 170, 141);
     display: flex;
     align-content: center;
     justify-content: center;
-    background-color: coral;
 }
 
 .buttonPlay {
@@ -39,6 +40,7 @@
     margin-bottom: 15px;
 }
 
+
 .homePageImages {
 
     display: flex;
@@ -48,11 +50,25 @@
     font-size: 130px;
 }
 
+.homePageH2 {
+    margin: 0;
+}
+
 .bullsandcows {
     text-align: center;
     font-size: 75px;
+    flex-grow: 1;
 }
 
+.scene_container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.homePageH2{
+    margin: 0;
+}
 
 .winningLabels {
     text-align: center;
@@ -112,8 +128,30 @@
 .howToPlay {
     width: 30px;
     height: 30px;
-    background-color: coral;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(233, 107, 4, 0.945);
+    border: 2px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 2px 2px 0px 0.2px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
 
+.button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+@media (min-width: 768px) {
+    .button-54 {
+        padding: 0.25em 0.75em;
+    }
 }
 
 .detailsPlayer {
@@ -121,7 +159,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: coral;
 }
 
 
@@ -150,16 +187,16 @@ form.playerDetailsScene {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    top:5px;
-    right:5px;
-  }
-  
-  .close:hover,
-  .close:focus {
+    top: 5px;
+    right: 5px;
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
 .continueButton {
     position: absolute;
@@ -197,11 +234,6 @@ body {
 
 }
 
-.mainContainer {
-    width: 100vw;
-    height: 100vh;
-}
-
 .sketchy {
     padding: 4rem 8rem;
     display: inline-block;
@@ -213,19 +245,6 @@ body {
 
 }
 
-.sketchy::before {
-    content: '';
-    border: 2px solid #353535;
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
-    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
-    z-index: -1;
-}
 
 .howToPlayModal {
     display: none;
@@ -267,6 +286,4 @@ body {
     background: white;
 }
 
-.numberButton{
-    
-}
+.numberButton {}

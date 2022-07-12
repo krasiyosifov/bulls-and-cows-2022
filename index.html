@@ -10,6 +10,7 @@
 
 <body>
     <script>
+
         function myFunction() {
             var numberValue = document.getElementById("my_number").value;
             console.log(numberValue);
@@ -166,30 +167,29 @@
             }
             focusName();
         }
+        event.preventDefault();
 
     </script>
 
-    <div id="home_scene_container" class="scene_container">
 
 
-        <div id="home_scene_container" class="scene_container">
+    <div id="home_scene_container" class="scene_container" >
 
-            <div class="bullsandcows">
-                <h2>Bulls
-                    <div class="homePageImages">
+        <div class="bullsandcows">
+            <h2 class="homePageH2">Bulls
+                <div class="homePageImages">
 
-                        <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
-                        &
-                        <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
+                    <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
+                    &
+                    <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
 
-                    </div>
-                    Cows
-                </h2>
-            </div>
-            <div class="buttons">
-                <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
-                <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
-            </div>
+                </div>
+                Cows
+            </h2>
+        </div>
+        <div class="buttons">
+            <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
+            <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
         </div>
     </div>
 
@@ -198,26 +198,30 @@
     <div id="player_details_scene_container" class="scene_container off">
         <!-- here goes the HTML code -->
         <div class="mainContainer">
-            <div class="playerDetails">
-                <form class="playerDetailsScene">
-                    <div class="detailsPlayer">
-                        <label for="name"><b>Enter nickname:</b></label>
-                        <div class="playerInput">
-                            <input class="inputPlayerName" type="text" id="player_name">
-                            <button class="confirmButton" type="button" onclick="checkNameAndContinue()">✓</button>
+            <div class="sketchy">
+                <div class="playerDetails">
+                    <form class="playerDetailsScene">
+                        <div class="detailsPlayer">
+                            <label for="name"><b>Enter nickname:</b></label>
+                            <div class="playerInput">
+                                <input class="inputPlayerName" type="text" id="player_name">
+                                <button class="confirmButton" type="button" onclick="checkNameAndContinue()">✓</button>
+                            </div>
+                            <p class="errorLabel off" id="player_details_name_error">Please enter your nickname</p>
                         </div>
-                        <p class="errorLabel off" id="player_details_name_error">Please enter your nickname</p>
-                    </div>
-                    <div class="detailsPlayer off" id="number_container">
-                        <label for="number"> <span id="player_details_name">Vicky</span> enter number:</label>
-                        <div class="playerInput">
-                            <input class="inputPlayerNumber" type="text" id="player_number" minlength="4" maxlength="4">
-                            <button class="confirmButton" type="button" onclick="checkNumberAndContinue()">✓</button>
+                        <div class="detailsPlayer off" id="number_container">
+                            <label for="number"> <span id="player_details_name">Vicky</span> enter number:</label>
+                            <div class="playerInput">
+                                <input class="inputPlayerNumber" type="text" id="player_number" minlength="4"
+                                    maxlength="4">
+                                <button class="confirmButton" type="button"
+                                    onclick="checkNumberAndContinue()">✓</button>
+                            </div>
+                            <p class="errorLabel off" id="player_details_number_error">Invalid number! Try again!</p>
                         </div>
-                        <p class="errorLabel off" id="player_details_number_error">Invalid number! Try again!</p>
-                    </div>
 
-                </form>
+                    </form>
+                </div>
             </div>
             <button class="howToPlay" onclick="openModal()"><b>?</b></button>
 
@@ -358,7 +362,6 @@
                     if (result) {
                         document.getElementById("bull").innerHTML = result.bulls + 'x';
                         document.getElementById("cow").innerHTML = result.cows + 'x';
-
                     }
                     console.log("the number is valid");
                     onInputEntered(numberValue)
