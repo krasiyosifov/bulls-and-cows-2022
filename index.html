@@ -171,6 +171,39 @@
         // winners storage
         var winners = [false, false];
 
+        function checkForWinnerAndShowEndGame() {
+            // check if no player has won yet
+            if (winners[0] == false && winners[1] == false) {
+                // return
+                return;
+            }
+
+            // hide both end game case containers
+            document.getElementById("both_winners_container").classList.add("off");
+            document.getElementById("single_winner_container").classList.add("off");
+
+            // check if both plyers win
+            if (winners[0] == true && winners[1] == true) {
+                // show container with text for both players win
+                document.getElementById("both_winners_container").classList.remove("off");
+            }
+
+            else {
+
+                //find winner index
+                let winnerIndex = 0;
+                if (winners[1] == true) {
+                    winnerIndex = 1;
+                }
+                // update name of the winning player
+                document.getElementById("winner_name").innerHTML=playerNames[winnerIndex];
+                // show container with text for single player win
+                document.getElementById("single_winner_container").classList.remove("off");
+            }
+            // show winning scene
+            showContainer('winning_page_scene_container');
+        }
+
     </script>
 
     <div id="home_scene_container" class="scene_container HomePagePosition">
@@ -236,9 +269,13 @@
         <!-- here goes the HTML code -->
         <div class="endGame">
             <form>
-                <div class="winningLabels">
-                    <label for="theWinnerIs"><b>THE WINNER IS:</b></label><br>
-                    <label for="winner"><b>...</b></label>
+                <div class="winningLabels off" id="single_winner_container">
+                    <span><b>THE WINNER IS:</b></span><br>
+                    <span id="winner_name">...</span>
+                </div>
+                <div class="winningLabels off" id="both_winners_container">
+                    <span>CONGRATS YOU</span><br>
+                    <span>BOTH WIN!</span>
                 </div>
                 <div class="buttonOptions">
                     <button type="button" id="revengeButton"
@@ -322,7 +359,7 @@
                 if (playerIndex == 0) {
                     document.getElementById("buttons_pl_one").classList.remove("off");
                     document.getElementById("buttons_pl_two").classList.add("off");
-                }else{
+                } else {
                     document.getElementById("buttons_pl_one").classList.add("off");
                     document.getElementById("buttons_pl_two").classList.remove("off");
                 }
