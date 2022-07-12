@@ -3,10 +3,9 @@
 }
 
 .playerDetails {
-    height: 50vh;
-    width: 50vw;
+    height: 100%;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
 }
 
@@ -72,7 +71,6 @@
 
 .winningLabels {
     text-align: center;
-    background-color: coral;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -172,17 +170,6 @@
     height: 100vh;
     width: 100vw;
 }
-
-form.playerDetailsScene {
-    text-align: center;
-    margin: 0;
-    position: absolute;
-    top: 40%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-size: 50px;
-}
-
 
 .closeButton {
     color: #aaaaaa;
@@ -287,3 +274,48 @@ body {
     padding: 5px;
     background: white;
 }
+
+.numberButton{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin: 5px 5px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+.buttonStrikeThrough {
+    position: relative;
+  }
+  
+.buttonStrikeThrough:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 1px solid;
+    border-color: inherit;
+    
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+  }

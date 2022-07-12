@@ -200,9 +200,10 @@
     <div id="player_details_scene_container" class="scene_container off">
         <!-- here goes the HTML code -->
         <div class="mainContainer">
-            <div class="sketchy">
-                <div class="playerDetails">
-                    <form class="playerDetailsScene">
+            <div class="playerDetails">
+                <div></div>
+                <div class="sketchy">
+                    <form>
                         <div class="detailsPlayer">
                             <label for="name">Enter nickname:</label>
                             <div class="playerInput">
@@ -224,10 +225,12 @@
 
                     </form>
                 </div>
+                <div></div>
             </div>
-            <button class="howToPlay" onclick="openModal()"><b>?</b></button>
-
         </div>
+        <button class="howToPlay" onclick="openModal()"><b>?</b></button>
+
+    </div>
     </div>
 
     <div id="winning_page_scene_container" class="scene_container off">
@@ -410,6 +413,11 @@
                     console.log(historySpan);
                 })
             }
+
+            function numberButtonClicked(event){
+                console.log(event.target)
+                event.target.classList.add("buttonStrikeThrough");
+            }
         </script>
 
         <div class="mainContainer">
@@ -423,7 +431,7 @@
             top:10px;">
             </div>
             <div class="btn-group">
-                <button class="numberButton" type="button">0</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">0</button>
                 <button class="numberButton" type="button">1</button>
                 <button class="numberButton" type="button">2</button>
                 <button class="numberButton" type="button">3</button>
