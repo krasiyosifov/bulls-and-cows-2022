@@ -328,7 +328,7 @@
                 console.log(numberValue);
                 console.log(currentPlayerIndex);
                 document.getElementById("continue_button").classList.add("off");
-               
+
                 //check if the number is valid
                 if (isNumberValid(numberValue) == true) {
                     // save player number into playerNumbers
@@ -344,7 +344,7 @@
                         prepareMainPlayerGuessesUI(currentPlayerIndex);
                     }
                     historyNumbersList();
-                    
+
                     // //if valid goes to the next person or main game scene
                     //
                 }
@@ -359,12 +359,16 @@
                 var numberValue = document.getElementById("player_guess_number").value;
                 console.log(mainPlayerGuesses);
                 console.log(numberValue);
+                var result;
                 if (isNumberValid(numberValue)) {
-                    
+
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
-
-                    var result = calculateBullsAndCows(playerNumbers[currentPlayerIndex], numberValue);
+                    if (currentPlayerIndex == 0) {
+                        result = calculateBullsAndCows(playerNumbers[1], numberValue);
+                    } else {
+                        result = calculateBullsAndCows(playerNumbers[0], numberValue);
+                    }
                     if (result) {
                         document.getElementById("bull").innerHTML = result.bulls + 'x';
                         document.getElementById("cow").innerHTML = result.cows + 'x';
@@ -414,7 +418,7 @@
                 })
             }
 
-            function numberButtonClicked(event){
+            function numberButtonClicked(event) {
                 console.log(event.target)
                 event.target.classList.add("buttonStrikeThrough");
             }
@@ -451,12 +455,12 @@
 
                     <div class="playerTurn">
                         <label for="name">
-                                <span id="player_span">Player1</span>'s turn:
-                                <div>
-                                    <input class="inputPlayerNumber" type="text" id="player_guess_number">
-                                    <button class="confirmButton" type="button" onclick="inputPlayerGuess()">✓
-                                    </button>
-                                </div>
+                            <span id="player_span">Player1</span>'s turn:
+                            <div>
+                                <input class="inputPlayerNumber" type="text" id="player_guess_number">
+                                <button class="confirmButton" type="button" onclick="inputPlayerGuess()">✓
+                                </button>
+                            </div>
                         </label>
                         <p class="errorLabel off" id="main_player_details_number_error">Invalid number! Try again!
                             </br>
@@ -472,7 +476,8 @@
                 </div>
 
                 <div class="continueButtonContainer">
-                    <button class="playButton off" id="continue_button" type="button" onclick="checkGuessesAndContinue()">CONTINUE</button>
+                    <button class="playButton off" id="continue_button" type="button"
+                        onclick="checkGuessesAndContinue()">CONTINUE</button>
                 </div>
 
             </div>
