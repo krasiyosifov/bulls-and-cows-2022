@@ -9,29 +9,7 @@
     justify-content: center;
 }
 
-.buttonPlay {
-    display: inline-block;
-    padding: 14px 50px;
-    font-size: 24px;
-    text-align: center;
-    outline: none;
-    color: #fff;
-    background-color: rgb(139, 139, 139);
-    border: none;
-    border-radius: 1px;
-    box-shadow: 0 9px#4f4747;
-    margin: 0px 15px;
-}
 
-.buttonPlay:hover {
-    background-color: #555555
-}
-
-.buttonPlay:active {
-    background-color: #555555;
-    box-shadow: 0 5px #363636;
-    transform: translateY(5px);
-}
 
 .buttons {
     display: flex;
@@ -41,12 +19,12 @@
 
 
 .homePageImages {
-
     display: flex;
     align-content: center;
-    justify-content: center;
     vertical-align: baseline;
     font-size: 130px;
+    align-items: center;
+    justify-content: center;
 }
 
 .homePageH2 {
@@ -69,6 +47,9 @@
 .homePageH2 {
     margin: 0;
 }
+.playerDetailsMargin{
+    margin-bottom: 20px
+}
 
 .winningLabels {
     text-align: center;
@@ -80,11 +61,7 @@
     justify-content: center;
 }
 
-.confirmButton {
-    width: 36px;
-    height: 36px;
 
-}
 
 .buttonOptions button {
     /*display: flex;
@@ -122,13 +99,31 @@
 
 .inputPlayerNumber {
     height: 30px;
-    border-width: 1px;
+    border-width: 2px;
 
 }
 
 .howToPlay {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #777764;
+    border: 2px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 2px 2px 0px 0.2px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    position: absolute;
+    top: 7px;
+    right: 11px;
+}
+.tick{width: 35px;
+    height: 35px;
     font-size: 16px;
     letter-spacing: 2px;
     text-decoration: none;
@@ -142,6 +137,24 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
+.closeButton {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #777764;
+    border: 2px solid;
+    box-shadow: 2px 2px 0px 0.2px;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    top: 5px;
+    right: 5px;
+}
+
+
 
 .button-54:active {
     box-shadow: 0px 0px 0px 0px;
@@ -172,15 +185,14 @@
     width: 100vw;
 }
 
-.closeButton {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    top: 5px;
-    right: 5px;
-}
 
+
+.cowImgRotate{
+    width:140vw;
+    height:140vh;
+    margin-top:20px;
+    padding-left:10px;
+}
 .close:hover,
 .close:focus {
     color: #4f4747;
@@ -208,11 +220,6 @@ body {
     right: 5px;
 }
 
-.howToPlay {
-    position: absolute;
-    top: 0;
-    right: 5px;
-}
 
 .gameContainer {
     display: flex;
@@ -231,16 +238,20 @@ body {
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     background: #ffffff;
     position: relative;
-
+    text-align: center;
 }
 
+.mainGameImagesContainer{
+    display:flex;
+    align-items: center;
+    padding: 20px;;
+}
 
 .howToPlayModal {
-    display: none;
     position: fixed;
+    display: none;
     z-index: 1;
-    padding-top: 100px;
-    left: 0;
+    left: 0; 
     top: 0;
     width: 100%;
     height: 100%;
@@ -250,6 +261,10 @@ body {
 }
 
 .modalContent {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -267,6 +282,30 @@ body {
     background: white;
 }
 
+.buttonPlay {
+    display: inline-block;
+    padding: 14px 50px;
+    font-size: 24px;
+    text-align: center;
+    outline: none;
+    color: #fff;
+    background-color: #777764;
+    border: none;
+    border-radius: 1px;
+    box-shadow: 0 9px#636353;
+    margin: 0px 15px;
+}
+
+.buttonPlay:hover {
+    background-color: #70705e;
+}
+
+.buttonPlay:active {
+    background-color: #70705e;
+    box-shadow: 0 5px #3f3f34;
+    transform: translateY(5px);
+}
+
 .numberButton{
     display: inline-block;
     padding: 7px 14px;
@@ -276,19 +315,21 @@ body {
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #777764;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px#4f4747;
     margin: 5px 5px;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {
+    background-color: #555555
+}
 
 .button:active {
-  background-color: #E07A3C;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    background-color: #555555;
+    box-shadow: 0 5px #363636;
+    transform: translateY(5px);
 }
 
 
