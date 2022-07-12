@@ -321,6 +321,13 @@
                 document.getElementById("main_player_details_number_error").classList.add("off");
                 document.getElementById("player_guess_number").value = "";
                 document.getElementById("player_span").innerHTML = playerNames[playerIndex];
+                if (playerIndex == 0) {
+                    document.getElementById("buttons_pl_one").classList.remove("off");
+                    document.getElementById("buttons_pl_two").classList.add("off");
+                }else{
+                    document.getElementById("buttons_pl_one").classList.add("off");
+                    document.getElementById("buttons_pl_two").classList.remove("off");
+                }
             }
 
             function checkGuessesAndContinue() {
@@ -329,7 +336,7 @@
                 console.log(numberValue);
                 console.log(currentPlayerIndex);
                 document.getElementById("continue_button").classList.add("off");
-               
+
                 //check if the number is valid
                 if (isNumberValid(numberValue) == true) {
                     // save player number into playerNumbers
@@ -345,7 +352,7 @@
                         prepareMainPlayerGuessesUI(currentPlayerIndex);
                     }
                     historyNumbersList();
-                    
+
                     // //if valid goes to the next person or main game scene
                     //
                 }
@@ -361,7 +368,7 @@
                 console.log(mainPlayerGuesses);
                 console.log(numberValue);
                 if (isNumberValid(numberValue)) {
-                    
+
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
 
@@ -415,9 +422,14 @@
                 })
             }
 
-            function numberButtonClicked(event){
+            function numberButtonClicked(event) {
                 console.log(event.target)
-                event.target.classList.add("buttonStrikeThrough");
+                if (event.target.classList.contains("buttonStrikeThrough")) {
+                    event.target.classList.remove("buttonStrikeThrough");
+                }
+                else {
+                    event.target.classList.add("buttonStrikeThrough");
+                }
             }
         </script>
 
@@ -431,19 +443,30 @@
             background: white;
             top:10px;">
             </div>
-            <div class="btn-group">
+            <div class="btn-group" id="buttons_pl_one">
                 <button class="numberButton" type="button" onclick="numberButtonClicked(event)">0</button>
-                <button class="numberButton" type="button">1</button>
-                <button class="numberButton" type="button">2</button>
-                <button class="numberButton" type="button">3</button>
-                <button class="numberButton" type="button">4</button>
-                <button class="numberButton" type="button">5</button>
-                <button class="numberButton" type="button">6</button>
-                <button class="numberButton" type="button">7</button>
-                <button class="numberButton" type="button">8</button>
-                <button class="numberButton" type="button">9</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">1</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">2</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">3</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">4</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">5</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">6</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">7</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">8</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">9</button>
             </div>
-
+            <div class="btn-group off" id="buttons_pl_two">
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">0</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">1</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">2</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">3</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">4</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">5</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">6</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">7</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">8</button>
+                <button class="numberButton" type="button" onclick="numberButtonClicked(event)">9</button>
+            </div>
             <button class="howToPlay" type="button" onclick="openModal()">?</button>
 
             <div class="gameContainer">

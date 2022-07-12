@@ -165,7 +165,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(251, 170, 141);
+    background-color: 48E08E;
     height: 100vh;
     width: 100vw;
 }
@@ -276,8 +276,8 @@ body {
 
 .numberButton{
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 15px;
+    padding: 7px 14px;
+    font-size: 8;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -293,7 +293,7 @@ body {
 .button:hover {background-color: #3e8e41}
 
 .button:active {
-  background-color: #3e8e41;
+  background-color: #E07A3C;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -301,6 +301,7 @@ body {
 
 .buttonStrikeThrough {
     position: relative;
+    
   }
   
 .buttonStrikeThrough:before {
@@ -309,12 +310,12 @@ body {
     left: 0;
     top: 50%;
     right: 0;
-    border-top: 1px solid;
-    border-color: inherit;
+    border-top: 2.5px solid;
+    border-color: white;
     
-    -webkit-transform:rotate(-5deg);
-    -moz-transform:rotate(-5deg);
-    -ms-transform:rotate(-5deg);
-    -o-transform:rotate(-5deg);
-    transform:rotate(-5deg);
+    -webkit-transform:rotate(135deg);
+    -moz-transform:rotate(135deg);
+    -ms-transform:rotate(135deg);
+    -o-transform:rotate(135deg);
+    transform:rotate(135deg);
   }
