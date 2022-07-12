@@ -37,8 +37,9 @@
 .buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
+
 
 .homePageImages {
 
@@ -59,10 +60,14 @@
     flex-grow: 1;
 }
 
-.homePagePosition {
+.scene_container{
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.homePageH2{
+    margin: 0;
 }
 
 .winningLabels {
