@@ -183,9 +183,10 @@
                 <h2 class="homePageH2">Bulls
                     <div class="homePageImages">
 
-                        <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
+                        <img class="bullImgRotate" src="images/bullHomeScreen.png" width="160" height="160"
+                            style="padding-right: 5px;">
                         &
-                        <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
+                        <img class="cowImgRotate" src="images/cowHomeScreen.png">
 
                     </div>
                     Cows
@@ -326,7 +327,7 @@
                 if (playerIndex == 0) {
                     document.getElementById("buttons_pl_one").classList.remove("off");
                     document.getElementById("buttons_pl_two").classList.add("off");
-                }else{
+                } else {
                     document.getElementById("buttons_pl_one").classList.add("off");
                     document.getElementById("buttons_pl_two").classList.remove("off");
                 }
@@ -493,7 +494,7 @@
                             <a href="#" onclick="openModal()">How To Play?</a>
                         </p>
                     </div>
-                    <div>
+                    <div class="mainGameImagesContainer">
                         <label id="bull" class="bullNumber" for="bull">0x</label>
                         <img src="images/bullCounter.png" style="width:100px;height:100px;">
                         <label id="cow" class="cowNumber" for="cow">0x</label>
