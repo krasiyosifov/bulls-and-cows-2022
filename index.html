@@ -323,8 +323,8 @@
                 var numberValue = document.getElementById("player_guess_number").value;
                 console.log(numberValue);
                 console.log(currentPlayerIndex);
-                document.getElementById("continue_button").classList.remove("off");
-
+                document.getElementById("continue_button").classList.add("off");
+               
                 //check if the number is valid
                 if (isNumberValid(numberValue) == true) {
                     // save player number into playerNumbers
@@ -340,6 +340,7 @@
                         prepareMainPlayerGuessesUI(currentPlayerIndex);
                     }
                     historyNumbersList();
+                    
                     // //if valid goes to the next person or main game scene
                     //
                 }
@@ -355,6 +356,7 @@
                 console.log(mainPlayerGuesses);
                 console.log(numberValue);
                 if (isNumberValid(numberValue)) {
+                    
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
 
