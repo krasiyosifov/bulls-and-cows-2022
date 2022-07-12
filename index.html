@@ -22,10 +22,6 @@
             }
         }
 
-        function openPlayer2Details() {
-
-        }
-
         function isNumberValid(numberAsString) {
             var digits = numberAsString.split("");
             console.log(digits);
@@ -54,9 +50,19 @@
 
             console.log(aDigits);
             console.log(bDigits);
-
-
-            //            result.cows++;
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 4; j++) {
+                    if (aDigits[i] == bDigits[j]) {
+                        if (i == j) {
+                            result.bulls++;
+                        }
+                        else {
+                            result.cows++;
+                        }
+                        break;
+                    }
+                }
+            }
 
             return result;
         }
@@ -147,6 +153,7 @@
                 }
                 else {
                     showContainer('main_game_screen_container');
+                    prepareMainPlayerGuessesUI(0);
                 }
 
                 // //if valid goes to the next person or main game scene
@@ -207,12 +214,11 @@
                             <button class="confirmButton" type="button" onclick="checkNumberAndContinue()">✓</button>
                         </div>
                         <p class="errorLabel off" id="player_details_number_error">Invalid number! Try again!</p>
-                        <button class="howToPlay" onclick="openModal()">?</button>
                     </div>
 
                 </form>
             </div>
-            <button class="howToPlay"><b>?</b></button>
+            <button class="howToPlay" onclick="openModal()"><b>?</b></button>
 
         </div>
     </div>
@@ -304,42 +310,40 @@
             function prepareMainPlayerGuessesUI(playerIndex) {
                 document.getElementById("main_player_details_number_error").classList.add("off");
                 document.getElementById("player_guess_number").value = "";
-                document.getElementById("player_span").innerHTML = playerNames[currentPlayerIndex]
+                document.getElementById("player_span").innerHTML = playerNames[playerIndex];
             }
-            if (document.getElementById("player_span")){
-                document.getElementById("player_span").innerHTML = playerNames[currentPlayerIndex]
-            }
+            
             function checkGuessesAndContinue() {
                     //read the number from the form field
                     var numberValue = document.getElementById("player_guess_number").value;
                     console.log(numberValue);
                     console.log(currentPlayerIndex);
-
+                    document.getElementById("continue_button").classList.remove("off");
                     //check if the number is valid
                     if (isNumberValid(numberValue) == true) {
                         // save player number into playerNumbers
                         mainPlayerGuesses[currentPlayerIndex] = numberValue;
 
-                        if (currentPlayerIndex == 0) {
-                            // next player's turn
-                            currentPlayerIndex = 1;
-                            // prepare UI
-                            prepareMainPlayerGuessesUI(currentPlayerIndex);
-                        } else {
-                            currentPlayerIndex = 0;
-                            prepareMainPlayerGuessesUI(currentPlayerIndex);
+                    if (currentPlayerIndex == 0) {
+                        // next player's turn
+                        currentPlayerIndex = 1;
+                        // prepare UI
+                        prepareMainPlayerGuessesUI(currentPlayerIndex);
+                    } else {
+                        currentPlayerIndex = 0;
+                        prepareMainPlayerGuessesUI(currentPlayerIndex);
 
-                        }
+                    }
 
-                        // //if valid goes to the next person or main game scene
-                        //
-                    }
-                    else {
-                        //if invalid shows error
-                        document.getElementById("player_details_number_error").classList.remove("off");
-                    }
-                    focusName();
+                    // //if valid goes to the next person or main game scene
+                    //
                 }
+                else {
+                    //if invalid shows error
+                    document.getElementById("player_details_number_error").classList.remove("off");
+                }
+                focusName();
+            }
 
             function inputPlayerGuess() {
                 var numberValue = document.getElementById("player_guess_number").value;
@@ -349,7 +353,7 @@
                 if (isNumberValid(numberValue)) {
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
-                    
+                    calculateBullsAndCows(playerNumbers[currentPlayerIndex],numberValue);
                     console.log("the number is valid");
                     onInputEntered(numberValue)
                     // TODO: put the result in the validation_result container
@@ -362,26 +366,32 @@
                 }
             }
 
-            var historyNumbers = [];
+            var historyNumbersPlayer = [
+                [],
+                []
+            ];
+            
             function onInputEntered(numberValue) {
-                //takes the number from the last input field
-                console.log(numberValue);
-                historyNumbers.push(numberValue);
+                historyNumbersPlayer[currentPlayerIndex].push(numberValue);
                 historyNumbersList();
-                console.log(historyNumbers);
             }
+
             function historyNumbersList() {
                 var historyElement = document.getElementById("history_numbers");
                 historyElement.innerHTML = "";
-                var historySpan;
-                historyNumbers.forEach(element => {
-                    historySpan = document.createElement("span");
+                createHistoryElements(historyNumbersPlayer[currentPlayerIndex], historyElement)
+            }
+
+            function createHistoryElements(playerArray, historyElement) {
+                playerArray.forEach(element => {
+                    var historySpan = document.createElement("span");
                     historySpan.innerHTML = element;
                     historyElement.appendChild(historySpan);
                     console.log(historySpan);
                 })
             }
         </script>
+
         <div class="mainContainer">
             <div id="history_numbers" style="display: flex;
             flex-direction: column;
@@ -405,8 +415,7 @@
                 <button class="numberButton" type="button">9</button>
             </div>
 
-            <button class="howToPlay" type="button">?
-            </button>
+            <button class="howToPlay" type="button" onclick="openModal()">?</button>
 
             <div class="gameContainer">
                 <div></div>
@@ -436,7 +445,8 @@
                     </div>
                 </div>
                 <div>
-                    <button class="continueButton off" id="continue_button" type="button" onclick="checkGuessesAndContinue()">CONTINUE
+                    <button class="continueButton off" id="continue_button" type="button"
+                        onclick="checkGuessesAndContinue()">CONTINUE
                     </button>
                 </div>
 
