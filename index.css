@@ -21,6 +21,7 @@
     border: none;
     border-radius: 1px;
     box-shadow: 0 9px#474747;
+    margin: 0px 15px ;
 }
 
 .buttonPlay:hover {
@@ -36,7 +37,7 @@
 .buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 
