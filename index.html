@@ -204,19 +204,19 @@
                 <div class="sketchy">
                     <form>
                         <div class="detailsPlayer">
-                            <label for="name">Enter nickname:</label>
+                            <label class = "playerDetailsMargin"for="name">Enter nickname:</label>
                             <div class="playerInput">
                                 <input class="inputPlayerName" type="text" id="player_name">
-                                <button class="confirmButton" type="button" onclick="checkNameAndContinue()">✓</button>
+                                <button class="tick" type="button" onclick="checkNameAndContinue()">✓</button>
                             </div>
                             <p class="errorLabel off" id="player_details_name_error">Please enter your nickname</p>
                         </div>
                         <div class="detailsPlayer off" id="number_container">
-                            <label for="number"> <span id="player_details_name">Vicky</span> enter number:</label>
+                            <label class = "playerDetailsMargin" for="number"> <span id="player_details_name">Vicky</span> enter number:</label>
                             <div class="playerInput">
                                 <input class="inputPlayerNumber" type="text" id="player_number" minlength="4"
                                     maxlength="4">
-                                <button class="confirmButton" type="button"
+                                <button  class="tick" type="button"
                                     onclick="checkNumberAndContinue()">✓</button>
                             </div>
                             <p class="errorLabel off" id="player_details_number_error">Invalid number! Try again!</p>
@@ -272,7 +272,7 @@
             }
         </script>
         <div class="modalContent">
-            <button class="closeButton" type="button" onclick="closeModal()">X</button>
+            <button class = "closeButton" type="button" onclick="closeModal()">X</button>
             <h1>How to play?</h1>
             <p>The game can be played by 2 people.</p>
             <p>First, Player1 enters their name and clicks the check button when they are done. After that a new text
@@ -480,7 +480,7 @@
                             <span id="player_span">Player1</span>'s turn:
                             <div class = "playerInput">
                                 <input class="inputPlayerNumber" type="text" id="player_guess_number">
-                                <button class="confirmButton" type="button" onclick="inputPlayerGuess()">✓
+                                <button class="tick" type="button" onclick="inputPlayerGuess()">✓
                                 </button>
                             </div>
                         </label>
