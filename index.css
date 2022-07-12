@@ -9,29 +9,7 @@
     justify-content: center;
 }
 
-.buttonPlay {
-    display: inline-block;
-    padding: 14px 50px;
-    font-size: 24px;
-    text-align: center;
-    outline: none;
-    color: #fff;
-    background-color: rgb(139, 139, 139);
-    border: none;
-    border-radius: 1px;
-    box-shadow: 0 9px#4f4747;
-    margin: 0px 15px;
-}
 
-.buttonPlay:hover {
-    background-color: #555555
-}
-
-.buttonPlay:active {
-    background-color: #555555;
-    box-shadow: 0 5px #363636;
-    transform: translateY(5px);
-}
 
 .buttons {
     display: flex;
@@ -267,6 +245,30 @@ body {
     background: white;
 }
 
+.buttonPlay {
+    display: inline-block;
+    padding: 14px 50px;
+    font-size: 24px;
+    text-align: center;
+    outline: none;
+    color: #fff;
+    background-color: #777764;
+    border: none;
+    border-radius: 1px;
+    box-shadow: 0 9px#636353;
+    margin: 0px 15px;
+}
+
+.buttonPlay:hover {
+    background-color: #70705e;
+}
+
+.buttonPlay:active {
+    background-color: #70705e;
+    box-shadow: 0 5px #3f3f34;
+    transform: translateY(5px);
+}
+
 .numberButton{
     display: inline-block;
     padding: 7px 14px;
@@ -276,19 +278,21 @@ body {
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #777764;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px#4f4747;
     margin: 5px 5px;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {
+    background-color: #555555
+}
 
 .button:active {
-  background-color: #E07A3C;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    background-color: #555555;
+    box-shadow: 0 5px #363636;
+    transform: translateY(5px);
 }
 
 
