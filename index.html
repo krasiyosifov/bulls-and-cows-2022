@@ -153,7 +153,8 @@
                 }
                 else {
                     showContainer('main_game_screen_container');
-                    prepareMainPlayerGuessesUI(0);
+                    currentPlayerIndex = 0;
+                    prepareMainPlayerGuessesUI(currentPlayerIndex);
                 }
 
                 // //if valid goes to the next person or main game scene
@@ -247,7 +248,6 @@
         <script>
             var modalHowToPlay = document.getElementById("how_to_play_scene_container");
             var btn = document.getElementById("how_to_play");
-
             function openModal() {
                 modalHowToPlay.style.display = "block";
                 console.log(modalHowToPlay);
@@ -264,8 +264,8 @@
             }
         </script>
         <div class="modalContent">
-            <h1>How to play?</h1>
             <button class="closeButton" type="button" onclick="closeModal()">X</button>
+            <h1>How to play?</h1>
             <p>The game can be played by 2 people.</p>
             <p>First, Player1 enters their name and clicks the check button when they are done. After that a new text
                 field
@@ -348,13 +348,17 @@
 
             function inputPlayerGuess() {
                 var numberValue = document.getElementById("player_guess_number").value;
-
                 console.log(mainPlayerGuesses);
                 console.log(numberValue);
                 if (isNumberValid(numberValue)) {
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
-                    calculateBullsAndCows(playerNumbers[currentPlayerIndex], numberValue);
+
+                    var result = calculateBullsAndCows(playerNumbers[currentPlayerIndex], numberValue);
+if(result){
+    document.getElementById("bull").innerHTML=result.bulls+'x';
+    document.getElementById("cow").innerHTML=result.cows+'x';
+}
                     console.log("the number is valid");
                     onInputEntered(numberValue)
                     // TODO: put the result in the validation_result container
@@ -439,9 +443,9 @@
                         </p>
                     </div>
                     <div>
-                        <label class="bullNumber" for="bull">4x</label>
+                        <label id="bull" class="bullNumber" for="bull">0x</label>
                         <img src="images/bullCounter.png" style="width:100px;height:100px;">
-                        <label class="cowNumber" for="cow">0x</label>
+                        <label id="cow" class="cowNumber" for="cow">0x</label>
                         <img src="images/cowCounter.png" style="width:100px;height:100px;">
                     </div>
                 </div>
