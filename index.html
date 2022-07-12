@@ -153,7 +153,8 @@
                 }
                 else {
                     showContainer('main_game_screen_container');
-                    prepareMainPlayerGuessesUI(0);
+                    currentPlayerIndex = 0;
+                    prepareMainPlayerGuessesUI(currentPlayerIndex);
                 }
 
                 // //if valid goes to the next person or main game scene
@@ -313,17 +314,17 @@
                 document.getElementById("player_guess_number").value = "";
                 document.getElementById("player_span").innerHTML = playerNames[playerIndex];
             }
-            
+
             function checkGuessesAndContinue() {
-                    //read the number from the form field
-                    var numberValue = document.getElementById("player_guess_number").value;
-                    console.log(numberValue);
-                    console.log(currentPlayerIndex);
-                    document.getElementById("continue_button").classList.remove("off");
-                    //check if the number is valid
-                    if (isNumberValid(numberValue) == true) {
-                        // save player number into playerNumbers
-                        mainPlayerGuesses[currentPlayerIndex] = numberValue;
+                //read the number from the form field
+                var numberValue = document.getElementById("player_guess_number").value;
+                console.log(numberValue);
+                console.log(currentPlayerIndex);
+                document.getElementById("continue_button").classList.remove("off");
+                //check if the number is valid
+                if (isNumberValid(numberValue) == true) {
+                    // save player number into playerNumbers
+                    mainPlayerGuesses[currentPlayerIndex] = numberValue;
 
                     if (currentPlayerIndex == 0) {
                         // next player's turn
@@ -348,13 +349,17 @@
 
             function inputPlayerGuess() {
                 var numberValue = document.getElementById("player_guess_number").value;
-
                 console.log(mainPlayerGuesses);
                 console.log(numberValue);
                 if (isNumberValid(numberValue)) {
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
-                    calculateBullsAndCows(playerNumbers[currentPlayerIndex],numberValue);
+
+                    var result = calculateBullsAndCows(playerNumbers[currentPlayerIndex], numberValue);
+if(result){
+    document.getElementById("bull").innerHTML=result.bulls+'x';
+    document.getElementById("cow").innerHTML=result.cows+'x';
+}
                     console.log("the number is valid");
                     onInputEntered(numberValue)
                     // TODO: put the result in the validation_result container
@@ -371,7 +376,7 @@
                 [],
                 []
             ];
-            
+
             function onInputEntered(numberValue) {
                 historyNumbersPlayer[currentPlayerIndex].push(numberValue);
                 historyNumbersList();
@@ -439,9 +444,9 @@
                         </p>
                     </div>
                     <div>
-                        <label class="bullNumber" for="bull">4x</label>
+                        <label id="bull" class="bullNumber" for="bull">0x</label>
                         <img src="images/bullCounter.png" style="width:100px;height:100px;">
-                        <label class="cowNumber" for="cow">0x</label>
+                        <label id="cow" class="cowNumber" for="cow">0x</label>
                         <img src="images/cowCounter.png" style="width:100px;height:100px;">
                     </div>
                 </div>
