@@ -19,7 +19,7 @@
     background-color: rgb(139, 139, 139);
     border: none;
     border-radius: 1px;
-    box-shadow: 0 9px#474747;
+    box-shadow: 0 9px#4f4747;
     margin: 0px 15px;
 }
 
@@ -50,6 +50,7 @@
 }
 
 .homePageH2 {
+    color: #4f4747;
     margin: 0;
 }
 
@@ -105,7 +106,7 @@
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: rgb(251, 170, 141);
+    background-color: #ebebde;
 }
 
 .errorLabel {
@@ -132,7 +133,7 @@
     letter-spacing: 2px;
     text-decoration: none;
     text-transform: uppercase;
-    color: rgba(233, 107, 4, 0.945);
+    color: #777764;
     border: 2px solid;
     padding: 0.25em 0.5em;
     box-shadow: 2px 2px 0px 0.2px;
@@ -166,7 +167,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(251, 170, 141);
+    background-color: 48E08E;
     height: 100vh;
     width: 100vw;
 }
@@ -182,7 +183,7 @@
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #4f4747;
     text-decoration: none;
     cursor: pointer;
 }
@@ -197,7 +198,6 @@ body {
     margin: 0;
     font-family: 'Special Elite', cursive, 'Times New Roman', Times, serif;
     letter-spacing: 2px;
-
 }
 
 .btn-group {
@@ -238,23 +238,15 @@ body {
 .howToPlayModal {
     display: none;
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     padding-top: 100px;
-    /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
 .modalContent {
@@ -277,8 +269,8 @@ body {
 
 .numberButton{
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 15px;
+    padding: 7px 14px;
+    font-size: 8;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -294,7 +286,7 @@ body {
 .button:hover {background-color: #3e8e41}
 
 .button:active {
-  background-color: #3e8e41;
+  background-color: #E07A3C;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -302,6 +294,7 @@ body {
 
 .buttonStrikeThrough {
     position: relative;
+    
   }
   
 .buttonStrikeThrough:before {
@@ -310,12 +303,12 @@ body {
     left: 0;
     top: 50%;
     right: 0;
-    border-top: 1px solid;
-    border-color: inherit;
+    border-top: 2.5px solid;
+    border-color: white;
     
-    -webkit-transform:rotate(-5deg);
-    -moz-transform:rotate(-5deg);
-    -ms-transform:rotate(-5deg);
-    -o-transform:rotate(-5deg);
-    transform:rotate(-5deg);
+    -webkit-transform:rotate(135deg);
+    -moz-transform:rotate(135deg);
+    -ms-transform:rotate(135deg);
+    -o-transform:rotate(135deg);
+    transform:rotate(135deg);
   }
