@@ -19,7 +19,7 @@
     background-color: rgb(139, 139, 139);
     border: none;
     border-radius: 1px;
-    box-shadow: 0 9px#474747;
+    box-shadow: 0 9px#4f4747;
     margin: 0px 15px;
 }
 
@@ -50,6 +50,7 @@
 }
 
 .homePageH2 {
+    color: #4f4747;
     margin: 0;
 }
 
@@ -105,7 +106,7 @@
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: rgb(251, 170, 141);
+    background-color: #ebebde;
 }
 
 .errorLabel {
@@ -132,7 +133,7 @@
     letter-spacing: 2px;
     text-decoration: none;
     text-transform: uppercase;
-    color: rgba(233, 107, 4, 0.945);
+    color: #777764;
     border: 2px solid;
     padding: 0.25em 0.5em;
     box-shadow: 2px 2px 0px 0.2px;
@@ -182,7 +183,7 @@
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #4f4747;
     text-decoration: none;
     cursor: pointer;
 }
