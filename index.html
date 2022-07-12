@@ -22,10 +22,6 @@
             }
         }
 
-        function openPlayer2Details() {
-
-        }
-
         function isNumberValid(numberAsString) {
             var digits = numberAsString.split("");
             console.log(digits);
@@ -218,12 +214,11 @@
                             <button class="confirmButton" type="button" onclick="checkNumberAndContinue()">✓</button>
                         </div>
                         <p class="errorLabel off" id="player_details_number_error">Invalid number! Try again!</p>
-                        <button class="howToPlay" onclick="openModal()">?</button>
                     </div>
 
                 </form>
             </div>
-            <button class="howToPlay"><b>?</b></button>
+            <button class="howToPlay" onclick="openModal()"><b>?</b></button>
 
         </div>
     </div>
@@ -330,26 +325,26 @@
                         // save player number into playerNumbers
                         mainPlayerGuesses[currentPlayerIndex] = numberValue;
 
-                        if (currentPlayerIndex == 0) {
-                            // next player's turn
-                            currentPlayerIndex = 1;
-                            // prepare UI
-                            prepareMainPlayerGuessesUI(currentPlayerIndex);
-                        } else {
-                            currentPlayerIndex = 0;
-                            prepareMainPlayerGuessesUI(currentPlayerIndex);
+                    if (currentPlayerIndex == 0) {
+                        // next player's turn
+                        currentPlayerIndex = 1;
+                        // prepare UI
+                        prepareMainPlayerGuessesUI(currentPlayerIndex);
+                    } else {
+                        currentPlayerIndex = 0;
+                        prepareMainPlayerGuessesUI(currentPlayerIndex);
 
-                        }
+                    }
 
-                        // //if valid goes to the next person or main game scene
-                        //
-                    }
-                    else {
-                        //if invalid shows error
-                        document.getElementById("player_details_number_error").classList.remove("off");
-                    }
-                    focusName();
+                    // //if valid goes to the next person or main game scene
+                    //
                 }
+                else {
+                    //if invalid shows error
+                    document.getElementById("player_details_number_error").classList.remove("off");
+                }
+                focusName();
+            }
 
             function inputPlayerGuess() {
                 var numberValue = document.getElementById("player_guess_number").value;
@@ -421,8 +416,7 @@
                 <button class="numberButton" type="button">9</button>
             </div>
 
-            <button class="howToPlay" type="button">?
-            </button>
+            <button class="howToPlay" type="button" onclick="openModal()">?</button>
 
             <div class="gameContainer">
                 <div></div>
@@ -452,7 +446,8 @@
                     </div>
                 </div>
                 <div>
-                    <button class="continueButton off" id="continue_button" type="button" onclick="checkGuessesAndContinue()">CONTINUE
+                    <button class="continueButton off" id="continue_button" type="button"
+                        onclick="checkGuessesAndContinue()">CONTINUE
                     </button>
                 </div>
 
