@@ -169,27 +169,25 @@
 
     </script>
 
-    <div id="home_scene_container" class="scene_container">
 
 
-        <div id="home_scene_container" class="scene_container" class = "HomePagePosition">
+    <div id="home_scene_container" class="scene_container" >
 
-            <div class="bullsandcows">
-                <h2 class ="homePageH2" >Bulls
-                    <div class="homePageImages">
+        <div class="bullsandcows">
+            <h2 class="homePageH2">Bulls
+                <div class="homePageImages">
 
-                        <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
-                        &
-                        <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
+                    <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
+                    &
+                    <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
 
-                    </div>
-                    Cows
-                </h2>
-            </div>
-            <div class="buttons">
-                <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
-                <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
-            </div>
+                </div>
+                Cows
+            </h2>
+        </div>
+        <div class="buttons">
+            <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
+            <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
         </div>
     </div>
 
@@ -355,10 +353,10 @@
                     document.getElementById("continue_button").classList.remove("off");
 
                     var result = calculateBullsAndCows(playerNumbers[currentPlayerIndex], numberValue);
-if(result){
-    document.getElementById("bull").innerHTML=result.bulls+'x';
-    document.getElementById("cow").innerHTML=result.cows+'x';
-}
+                    if (result) {
+                        document.getElementById("bull").innerHTML = result.bulls + 'x';
+                        document.getElementById("cow").innerHTML = result.cows + 'x';
+                    }
                     console.log("the number is valid");
                     onInputEntered(numberValue)
                     // TODO: put the result in the validation_result container

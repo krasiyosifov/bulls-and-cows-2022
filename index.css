@@ -36,8 +36,9 @@
 .buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
+
 
 .homePageImages {
 
@@ -47,19 +48,21 @@
     vertical-align: baseline;
     font-size: 130px;
 }
-.homePageH2{
-    margin: 0;
-}
+
 .bullsandcows {
     text-align: center;
     font-size: 75px;
     flex-grow: 1;
 }
 
-.homePagePosition{
+.scene_container{
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.homePageH2{
+    margin: 0;
 }
 
 .winningLabels {
