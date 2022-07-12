@@ -154,10 +154,20 @@ form.playerDetailsScene {
 
 
 .closeButton {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-}
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    top:5px;
+    right:5px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 .continueButton {
     position: absolute;
@@ -263,4 +273,8 @@ body {
     left: 10px;
     padding: 5px;
     background: white;
+}
+
+.numberButton{
+    
 }
