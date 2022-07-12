@@ -171,25 +171,27 @@
 
     </script>
 
+    <div id="home_scene_container" class="scene_container">
 
 
-    <div id="home_scene_container" class="scene_container" >
+        <div id="home_scene_container" class="scene_container" class="HomePagePosition">
 
-        <div class="bullsandcows">
-            <h2 class="homePageH2">Bulls
-                <div class="homePageImages">
+            <div class="bullsandcows">
+                <h2 class="homePageH2">Bulls
+                    <div class="homePageImages">
 
-                    <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
-                    &
-                    <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
+                        <img class="bullImgRotate" src="images/bullHomeScreen.png" width="170" height="170">
+                        &
+                        <img class="cowImgRotate" src="images/cowHomeScreen.png" width="150" height="150">
 
-                </div>
-                Cows
-            </h2>
-        </div>
-        <div class="buttons">
-            <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
-            <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
+                    </div>
+                    Cows
+                </h2>
+            </div>
+            <div class="buttons">
+                <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
+                <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
+            </div>
         </div>
     </div>
 
@@ -202,7 +204,7 @@
                 <div class="playerDetails">
                     <form class="playerDetailsScene">
                         <div class="detailsPlayer">
-                            <label for="name"><b>Enter nickname:</b></label>
+                            <label for="name">Enter nickname:</label>
                             <div class="playerInput">
                                 <input class="inputPlayerName" type="text" id="player_name">
                                 <button class="confirmButton" type="button" onclick="checkNameAndContinue()">✓</button>
