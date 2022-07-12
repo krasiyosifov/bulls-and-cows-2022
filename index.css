@@ -103,6 +103,8 @@
 }
 
 .mainContainer {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
     background-color: rgb(251, 170, 141);
@@ -285,5 +287,3 @@ body {
     padding: 5px;
     background: white;
 }
-
-.numberButton {}

@@ -297,8 +297,7 @@
                 On the right the player can look at the numbers from 1 to 9 and check which one is not needed anymore.
             </p>
             <p>In the top right corner there is a question button. If you need to check the rules of the game again you
-                can
-                press it.</p>
+                can press it.</p>
             <p>If both players win they can press the revenge button and play again.</p>
 
         </div>
@@ -439,7 +438,7 @@
             <button class="howToPlay" type="button" onclick="openModal()">?</button>
 
             <div class="gameContainer">
-                <div></div>
+                <div class="emptyContainer"></div>
                 <div class="sketchy">
 
                     <div class="playerTurn">
@@ -465,10 +464,9 @@
                         <img src="images/cowCounter.png" style="width:100px;height:100px;">
                     </div>
                 </div>
-                <div>
-                    <button class="continueButton off" id="continue_button" type="button"
-                        onclick="checkGuessesAndContinue()">CONTINUE
-                    </button>
+
+                <div class="continueButtonContainer">
+                    <button class="playButton off" id="continue_button" type="button" onclick="checkGuessesAndContinue()">CONTINUE</button>
                 </div>
 
             </div>
