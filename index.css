@@ -47,7 +47,8 @@
 .homePageH2 {
     margin: 0;
 }
-.playerDetailsMargin{
+
+.playerDetailsMargin {
     margin-bottom: 20px
 }
 
@@ -123,7 +124,9 @@
     top: 7px;
     right: 11px;
 }
-.tick{width: 35px;
+
+.tick {
+    width: 35px;
     height: 35px;
     font-size: 16px;
     letter-spacing: 2px;
@@ -138,6 +141,7 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
+
 .closeButton {
     width: 35px;
     height: 35px;
@@ -188,12 +192,13 @@
 
 
 
-.cowImgRotate{
-    width:140vw;
-    height:140vh;
-    margin-top:20px;
-    padding-left:10px;
+.cowImgRotate {
+    width: 23vh;
+    height: 23vh;
+    margin-top: 20px;
+    padding-left: 10px;
 }
+
 .close:hover,
 .close:focus {
     color: #4f4747;
@@ -242,17 +247,18 @@ body {
     text-align: center;
 }
 
-.mainGameImagesContainer{
-    display:flex;
+.mainGameImagesContainer {
+    display: flex;
     align-items: center;
-    padding: 20px;;
+    padding: 20px;
+    ;
 }
 
 .howToPlayModal {
     position: fixed;
     display: none;
     z-index: 1;
-    left: 0; 
+    left: 0;
     top: 0;
     width: 100%;
     height: 100%;
@@ -307,7 +313,7 @@ body {
     transform: translateY(5px);
 }
 
-.numberButton{
+.numberButton {
     display: inline-block;
     padding: 7px 14px;
     font-size: 8;
@@ -336,9 +342,9 @@ body {
 
 .buttonStrikeThrough {
     position: relative;
-    
-  }
-  
+
+}
+
 .buttonStrikeThrough:before {
     position: absolute;
     content: "";
@@ -347,10 +353,10 @@ body {
     right: 0;
     border-top: 2.5px solid;
     border-color: white;
-    
-    -webkit-transform:rotate(135deg);
-    -moz-transform:rotate(135deg);
-    -ms-transform:rotate(135deg);
-    -o-transform:rotate(135deg);
-    transform:rotate(135deg);
-  }
+
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
