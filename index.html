@@ -258,7 +258,6 @@
             var btn = document.getElementById("how_to_play");
             function openModal() {
                 modalHowToPlay.style.display = "block";
-                console.log(modalHowToPlay);
             }
             if (modalHowToPlay) {
                 window.onclick = function (event) {
@@ -320,6 +319,8 @@
                 document.getElementById("main_player_details_number_error").classList.add("off");
                 document.getElementById("player_guess_number").value = "";
                 document.getElementById("player_span").innerHTML = playerNames[playerIndex];
+                document.getElementById("bull").innerHTML = 0 + 'x';
+                document.getElementById("cow").innerHTML = 0 + 'x';
                 if (playerIndex == 0) {
                     document.getElementById("buttons_pl_one").classList.remove("off");
                     document.getElementById("buttons_pl_two").classList.add("off");
@@ -332,14 +333,10 @@
             function checkGuessesAndContinue() {
                 //read the number from the form field
                 var numberValue = document.getElementById("player_guess_number").value;
-                console.log(numberValue);
-                console.log(currentPlayerIndex);
                 document.getElementById("continue_button").classList.add("off");
 
                 //check if the number is valid
                 if (isNumberValid(numberValue) == true) {
-                    document.getElementById("bull").innerHTML = 0 + 'x';
-                    document.getElementById("cow").innerHTML = 0 + 'x';
                     // save player number into playerNumbers
                     mainPlayerGuesses[currentPlayerIndex] = numberValue;
                     if (currentPlayerIndex == 0) {
@@ -356,11 +353,9 @@
                         if (playerNumbers[currentPlayerIndex] == numberValue) {
                             winners[1] = true;
                         }
-                        console.log(winners);
                         prepareMainPlayerGuessesUI(currentPlayerIndex);
                     }
                     historyNumbersList(bullsAndCowsResult);
-                    console.log(winners);
                     // //if valid goes to the next person or main game scene
                     //
                 }
@@ -373,8 +368,6 @@
 
             function inputPlayerGuess() {
                 var numberValue = document.getElementById("player_guess_number").value;
-                console.log(mainPlayerGuesses);
-                console.log(numberValue);
                 if (isNumberValid(numberValue)) {
 
                     document.getElementById("main_player_details_number_error").classList.add("off");
@@ -388,12 +381,10 @@
                         document.getElementById("bull").innerHTML = bullsAndCowsResult.bulls + 'x';
                         document.getElementById("cow").innerHTML = bullsAndCowsResult.cows + 'x';
                     }
-                    console.log("the number is valid");
                     onInputEntered(numberValue, bullsAndCowsResult)
                     // TODO: put the result in the validation_result container
                 } else {
                     document.getElementById("continue_button").classList.add("off");
-                    console.log("the number is invalid");
                     let errorLabel = document.getElementById("main_player_details_number_error");
                     errorLabel.classList.remove("off");
 
@@ -427,11 +418,8 @@
             function createHistoryElements(playerArray, historyElement, bullsAndCowsResult) {
                 playerArray.forEach(element => {
                     var historySpan = document.createElement("span");
-                    console.log('bulls cows result', bullsAndCowsResult);
                     historySpan.innerHTML = element + " - " + bullsAndCowsResult.bulls + " bulls, " + bullsAndCowsResult.cows + " cows.";
                     historyElement.appendChild(historySpan);
-                    console.log(historySpan);
-
                 })
             }
 
