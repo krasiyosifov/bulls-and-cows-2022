@@ -48,6 +48,10 @@
     margin: 0;
 }
 
+.playerDetailsMargin {
+    margin-bottom: 20px
+}
+
 .winningLabels {
     text-align: center;
     display: flex;
@@ -58,11 +62,7 @@
     justify-content: center;
 }
 
-.confirmButton {
-    width: 36px;
-    height: 36px;
 
-}
 
 .buttonOptions button {
     /*display: flex;
@@ -100,13 +100,33 @@
 
 .inputPlayerNumber {
     height: 30px;
-    border-width: 1px;
+    border-width: 2px;
 
 }
 
 .howToPlay {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #777764;
+    border: 2px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 2px 2px 0px 0.2px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    position: absolute;
+    top: 7px;
+    right: 11px;
+}
+
+.tick {
+    width: 35px;
+    height: 35px;
     font-size: 16px;
     letter-spacing: 2px;
     text-decoration: none;
@@ -120,6 +140,25 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
+
+.closeButton {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #777764;
+    border: 2px solid;
+    box-shadow: 2px 2px 0px 0.2px;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    top: 5px;
+    right: 5px;
+}
+
+
 
 .button-54:active {
     box-shadow: 0px 0px 0px 0px;
@@ -150,21 +189,15 @@
     width: 100vw;
 }
 
-.closeButton {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    top: 5px;
-    right: 5px;
+
+
+.cowImgRotate {
+    width: 23vh;
+    height: 23vh;
+    margin-top: 20px;
+    padding-left: 10px;
 }
 
-.cowImgRotate{
-    width:140vw;
-    height:140vh;
-    margin-top:20px;
-    padding-left:10px;
-}
 .close:hover,
 .close:focus {
     color: #4f4747;
@@ -192,11 +225,6 @@ body {
     right: 5px;
 }
 
-.howToPlay {
-    position: absolute;
-    top: 8px;
-    right: 13px;
-}
 
 .gameContainer {
     display: flex;
@@ -218,17 +246,18 @@ body {
     text-align: center;
 }
 
-.mainGameImagesContainer{
-    display:flex;
+.mainGameImagesContainer {
+    display: flex;
     align-items: center;
-    padding: 20px;;
+    padding: 20px;
+    ;
 }
 
 .howToPlayModal {
     position: fixed;
     display: none;
     z-index: 1;
-    left: 0; 
+    left: 0;
     top: 0;
     width: 100%;
     height: 100%;
@@ -283,7 +312,7 @@ body {
     transform: translateY(5px);
 }
 
-.numberButton{
+.numberButton {
     display: inline-block;
     padding: 7px 14px;
     font-size: 8;
@@ -312,9 +341,9 @@ body {
 
 .buttonStrikeThrough {
     position: relative;
-    
-  }
-  
+
+}
+
 .buttonStrikeThrough:before {
     position: absolute;
     content: "";
@@ -323,10 +352,10 @@ body {
     right: 0;
     border-top: 2.5px solid;
     border-color: white;
-    
-    -webkit-transform:rotate(135deg);
-    -moz-transform:rotate(135deg);
-    -ms-transform:rotate(135deg);
-    -o-transform:rotate(135deg);
-    transform:rotate(135deg);
-  }
+
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
