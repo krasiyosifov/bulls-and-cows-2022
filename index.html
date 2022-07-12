@@ -320,22 +320,22 @@
                 console.log(numberValue);
                 console.log(currentPlayerIndex);
                 document.getElementById("continue_button").classList.remove("off");
+
                 //check if the number is valid
                 if (isNumberValid(numberValue) == true) {
                     // save player number into playerNumbers
                     mainPlayerGuesses[currentPlayerIndex] = numberValue;
-
                     if (currentPlayerIndex == 0) {
                         // next player's turn
                         currentPlayerIndex = 1;
                         // prepare UI
                         prepareMainPlayerGuessesUI(currentPlayerIndex);
+                        historyNumbersList();
                     } else {
                         currentPlayerIndex = 0;
                         prepareMainPlayerGuessesUI(currentPlayerIndex);
-
                     }
-
+                    historyNumbersList();
                     // //if valid goes to the next person or main game scene
                     //
                 }
@@ -355,10 +355,11 @@
                     document.getElementById("continue_button").classList.remove("off");
 
                     var result = calculateBullsAndCows(playerNumbers[currentPlayerIndex], numberValue);
-if(result){
-    document.getElementById("bull").innerHTML=result.bulls+'x';
-    document.getElementById("cow").innerHTML=result.cows+'x';
-}
+                    if (result) {
+                        document.getElementById("bull").innerHTML = result.bulls + 'x';
+                        document.getElementById("cow").innerHTML = result.cows + 'x';
+
+                    }
                     console.log("the number is valid");
                     onInputEntered(numberValue)
                     // TODO: put the result in the validation_result container
@@ -367,6 +368,7 @@ if(result){
                     console.log("the number is invalid");
                     let errorLabel = document.getElementById("main_player_details_number_error");
                     errorLabel.classList.remove("off");
+
                     // TODO: put the result in the validation_result container
                 }
             }
@@ -383,7 +385,14 @@ if(result){
 
             function historyNumbersList() {
                 var historyElement = document.getElementById("history_numbers");
+                historyElement.classList.remove("off");
                 historyElement.innerHTML = "";
+                if (historyNumbersPlayer[currentPlayerIndex].length == 0) {
+                    historyElement.classList.add("off");
+                }
+                else {
+                    historyElement.classList.remove("off");
+                }
                 createHistoryElements(historyNumbersPlayer[currentPlayerIndex], historyElement)
             }
 
@@ -398,7 +407,7 @@ if(result){
         </script>
 
         <div class="mainContainer">
-            <div id="history_numbers" style="display: flex;
+            <div id="history_numbers" class="off" style="display: flex;
             flex-direction: column;
             width: fit-content;
             position: absolute;
