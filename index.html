@@ -54,9 +54,19 @@
 
             console.log(aDigits);
             console.log(bDigits);
-
-
-            //            result.cows++;
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 4; j++) {
+                    if (aDigits[i] == bDigits[j]) {
+                        if (i == j) {
+                            result.bulls++;
+                        }
+                        else {
+                            result.cows++;
+                        }
+                        break;
+                    }
+                }
+            }
 
             return result;
         }
