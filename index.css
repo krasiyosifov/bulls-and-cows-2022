@@ -102,7 +102,7 @@
 .inputPlayerNumber {
     height: 30px;
     border-width: 2px;
-    
+
 
 }
 
@@ -381,4 +381,13 @@ body {
     -ms-transform: rotate(135deg);
     -o-transform: rotate(135deg);
     transform: rotate(135deg);
+}
+
+@media only screen and (min-width: 768px) {
+    #winning_page_scene_container .buttonOptions {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 60px;
+        align-items: stretch;
+    }
 }
