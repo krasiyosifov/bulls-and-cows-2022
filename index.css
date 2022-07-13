@@ -14,7 +14,7 @@
 .buttons {
     display: flex;
     justify-content: space-between;
-    
+    margin-bottom: 20px;
 }
 
 
@@ -80,7 +80,7 @@
 .playerInput {
     text-align: center;
     display: flex;
-    align-items: center;
+    
 }
 
 .mainContainer {
@@ -162,6 +162,7 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    align-items: center
 }
 
 .closeButton {
@@ -202,6 +203,7 @@
     flex-direction: column;
 }
 
+
 .endGame {
     display: flex;
     justify-content: center;
@@ -226,13 +228,6 @@
     padding-left: 10px;
 }
 
-.bullImgRotate {
-    width: 23vh;
-    height: 23vh;
-    margin-top: -20px;
-    padding-left: 10px;
-}
-
 .close:hover,
 .close:focus {
     color: #4f4747;
@@ -244,6 +239,8 @@
     position: absolute;
     right: 50px;
     bottom: 0;
+    display: flex;
+    flex-direction: row;
 }
 
 body {
