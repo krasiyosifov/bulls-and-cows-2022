@@ -67,14 +67,14 @@
 
 
 
-.buttonOptions button {
+.buttonOptions {
     /*display: flex;
     justify-content: end;
     align-items: baseline;*/
+    display: flex;
     flex-direction: row;
     text-align: center;
-    align-items: center;
-    padding: 15px 100px;
+    padding: 15px 70px;
 }
 
 .playerInput {
@@ -429,12 +429,18 @@ body {
         flex-direction: column;
     }
 
-    .sketchy {
-        width: 100%;
-
+    #winning_page_scene_container .buttonPlay {
+        margin: 10px 0;
     }
 
-    .responsiveContainer {
-        width: 90%;
-    }
+
 }
+.sketchy {
+    width: 100%;
+
+}
+
+.responsiveContainer {
+    width: 90%;
+}
+
