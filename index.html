@@ -20,9 +20,12 @@
             if (digits.length != 4) {
                 return false;
             }
-
+            
             // check of duplicated digits
             for (let i = 0; i <= 2; i++) {
+                if(digits[0]==0){
+                    return false;
+                }
                 let d1 = digits[i];
                 for (let j = i + 1; j <= 3; j++) {
                     let d2 = digits[j];
