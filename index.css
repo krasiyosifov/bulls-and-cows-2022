@@ -247,7 +247,7 @@
 
 body {
     margin: 0;
-    font-family: 'Special Elite', cursive, 'Times New Roman', Times, serif;
+    font-family: cursive, 'Times New Roman', Times, serif;
     letter-spacing: 2px;
 }
 
@@ -262,8 +262,7 @@ body {
 
 .gameContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100%;
 
@@ -423,7 +422,7 @@ body {
     
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (max-width:768px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
@@ -436,5 +435,14 @@ body {
 
     .responsiveContainer {
         width: 90%;
+    }
+
+    .btn-group{
+        bottom: 5px;
+        right: 0;
+        top: unset;
+        left:5px;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
