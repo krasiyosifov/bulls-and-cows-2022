@@ -142,6 +142,24 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
+.continue{
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #777764;
+    border: 2px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 2px 2px 0px 0.2px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
 
 .closeButton {
     width: 35px;
