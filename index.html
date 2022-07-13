@@ -360,7 +360,7 @@
                 document.getElementById("player_span").innerHTML = playerNames[playerIndex];
                 document.getElementById("bull").innerHTML = 0 + 'x';
                 document.getElementById("cow").innerHTML = 0 + 'x';
-                document.getElementById("continue_button").classList.remove("off");
+                document.getElementById("player_guess_number").removeAttribute("disabled");
                 if (playerIndex == 0) {
                     document.getElementById("buttons_pl_one").classList.remove("off");
                     document.getElementById("buttons_pl_two").classList.add("off");
@@ -416,6 +416,7 @@
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
                     document.getElementById("tick_button").classList.add("off");
+                    document.getElementById("player_guess_number").setAttribute("disabled","");
                     if (currentPlayerIndex == 0) {
                         bullsAndCowsResult = calculateBullsAndCows(playerNumbers[1], numberValue);
                     } else {
@@ -524,8 +525,13 @@
                             <div class="playerInput">
                                 <input class="inputPlayerNumber" type="text" id="player_guess_number" minlength="4"
                                     maxlength="4">
-                                <button class="tick" id="tick_button" type="button" onclick="inputPlayerGuess()">✓
+                                <button class="tick" id="tick_button" type="button" onclick="inputPlayerGuess()">
+                                    ✓
                                 </button>
+                                <div class="buttons">
+                                    <button class="continue off" id="continue_button" type="button"
+                                        onclick="checkGuessesAndContinue()">CONTINUE</button>
+                                </div>
                             </div>
                         </label>
                         <p class="errorLabel off" id="main_player_details_number_error">Invalid number! Try again!
@@ -541,10 +547,6 @@
                     </div>
                 </div>
 
-                <div class="buttons">
-                    <button class="buttonPlay off" id="continue_button" type="button"
-                        onclick="checkGuessesAndContinue()">CONTINUE</button>
-                </div>
 
             </div>
         </div>

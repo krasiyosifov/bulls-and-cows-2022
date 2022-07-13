@@ -14,7 +14,7 @@
 .buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    
 }
 
 
@@ -105,7 +105,7 @@
 .inputPlayerNumber {
     height: 30px;
     border-width: 2px;
-    
+
 
 }
 
@@ -131,6 +131,24 @@
 
 .tick {
     width: 35px;
+    height: 35px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #777764;
+    border: 2px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 2px 2px 0px 0.2px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.continue{
+    width: 120px;
+    display: flex;
+    flex-direction: row;
     height: 35px;
     font-size: 16px;
     letter-spacing: 2px;
@@ -184,7 +202,6 @@
     flex-direction: column;
 }
 
-
 .endGame {
     display: flex;
     justify-content: center;
@@ -206,6 +223,13 @@
     width: 23vh;
     height: 23vh;
     margin-top: 20px;
+    padding-left: 10px;
+}
+
+.bullImgRotate {
+    width: 23vh;
+    height: 23vh;
+    margin-top: -20px;
     padding-left: 10px;
 }
 
