@@ -396,8 +396,9 @@ body {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:280px) {
     #player_details_scene_container.sketchy.buttons {
+        display: flex;
         flex-direction: column;
         margin: 0;
     }
@@ -406,13 +407,22 @@ body {
         padding: 4rem 8rem;
         display: inline-block;
         border: 3px solid #333333;
-        font-size: 5rem;
+        font-size: 3rem;
         border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
         position: relative;
+        
     }
 
     #player_details_scene_container.inputPlayerName {
         justify-content: center;
+    }
+    #main_game_screen_container
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        right: 5px;
     }
 }
 @media only screen and (min-width:768px) {
