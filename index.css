@@ -67,14 +67,15 @@
 
 
 
-.buttonOptions button {
+.buttonOptions {
     /*display: flex;
     justify-content: end;
     align-items: baseline;*/
+    display: flex;
     flex-direction: row;
     text-align: center;
     align-items: center;
-    padding: 15px 100px;
+    padding: 15px 70px;
 }
 
 .playerInput {
@@ -394,10 +395,15 @@ body {
     transform: rotate(135deg);
 }
 
-@media only screen and (min-width:768px) {
+@media screen and (max-width:768px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
     }
+
+    #winning_page_scene_container .buttonPlay {
+        margin: 10px 0;
+    }
+
 
 }
