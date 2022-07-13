@@ -90,7 +90,6 @@
     width: 100vw;
     background-color: #ebebde;
     align-items: center
-    
 }
 
 .errorLabel {
@@ -414,17 +413,25 @@ body {
     #player_details_scene_container.inputPlayerName {
         justify-content: center;
     }
-    
+
     #main_game_screen_container .playerInput {
-      justify-content: center;
-      margin-top: 15px;
+        justify-content: center;
+        margin-top: 15px;
     }
 }
+
 @media only screen and (min-width:768px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
+    }
+
+    .sketchy {
+        width: 100%;
 
     }
 
+    .responsiveContainer {
+        width: 90%;
+    }
 }
