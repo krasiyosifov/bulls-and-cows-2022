@@ -29,18 +29,13 @@
 
 .homePageH2 {
     color: #4f4747;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
 }
 
-
 .bullsandcows {
-    display: flex;
     text-align: center;
     font-size: 75px;
     flex-grow: 1;
-    align-items: center;
-
 }
 
 .scene_container {
@@ -49,7 +44,9 @@
     flex-direction: column;
 }
 
-
+.homePageH2 {
+    margin: 0;
+}
 
 .playerDetailsMargin {
     margin-bottom: 20px
@@ -205,7 +202,7 @@
     width: 23vh;
     height: 23vh;
     margin-top: -20px;
-    padding-left: -10px;
+    padding-left: 10px;
 }
 
 .close:hover,
@@ -368,15 +365,4 @@ body {
     -ms-transform: rotate(135deg);
     -o-transform: rotate(135deg);
     transform: rotate(135deg);
-}
-
-@media only screen and (min-width: 768px) {
-    #home_page_screen .cowImgRotate .bullImgRotate {
-        width: 16vh;
-        height: 16vh;
-    }
-
-    .bullsandcows {
-        justify-content: center;
-    }
 }
