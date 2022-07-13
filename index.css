@@ -67,14 +67,14 @@
 
 
 
-.buttonOptions button {
+.buttonOptions {
     /*display: flex;
     justify-content: end;
     align-items: baseline;*/
+    display: flex;
     flex-direction: row;
     text-align: center;
-    align-items: center;
-    padding: 15px 100px;
+    padding: 15px 70px;
 }
 
 .playerInput {
@@ -89,7 +89,7 @@
     height: 100vh;
     width: 100vw;
     background-color: #ebebde;
-    align-items: center
+
 }
 
 .errorLabel {
@@ -228,7 +228,7 @@
 .bullsImgRotate {
     width: 23vh;
     height: 23vh;
-   
+
 }
 
 
@@ -360,14 +360,17 @@ body {
     box-shadow: 0 9px#4f4747;
     margin: 5px 5px;
 }
+
 .button:hover {
     background-color: #555555
 }
+
 .button:active {
     background-color: #555555;
     box-shadow: 0 5px #363636;
     transform: translateY(5px);
 }
+
 .buttonStrikeThrough {
     position: relative;
 }
@@ -419,7 +422,7 @@ body {
         justify-content: center;
         margin-top: 15px;
     }
-    
+
 }
 
 @media only screen and (max-width:768px) {
@@ -428,21 +431,25 @@ body {
         flex-direction: column;
     }
 
-    .sketchy {
-        width: 100%;
-
+    #winning_page_scene_container .buttonPlay {
+        margin: 10px 0;
     }
 
     .responsiveContainer {
         width: 90%;
     }
 
-    .btn-group{
+    .btn-group {
         bottom: 5px;
         right: 0;
         top: unset;
-        left:5px;
+        left: 5px;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    .sketchy {
+        width: 100%;
+
     }
 }
