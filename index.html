@@ -3,32 +3,25 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="index.css">
     <title>Bulls and Cows game</title>
     <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
     <script>
-
-        function myFunction() {
-            var numberValue = document.getElementById("my_number").value;
-            console.log(numberValue);
-            if (isNumberValid(numberValue)) {
-                console.log("the number is valid");
-                // TODO: put the result in the validation_result container
-            } else {
-                console.log("the number is invalid");
-                // TODO: put the result in the validation_result container
-            }
-        }
-
+        /**
+         * Validates if the given number is a valid number based on the rules of the game
+         */
         function isNumberValid(numberAsString) {
+            // convert string number to array
             var digits = numberAsString.split("");
-            console.log(digits);
+
+            // check if the number size is valid
             if (digits.length != 4) {
                 return false;
             }
+
+            // check of duplicated digits
             for (let i = 0; i <= 2; i++) {
                 let d1 = digits[i];
                 for (let j = i + 1; j <= 3; j++) {
@@ -38,19 +31,24 @@
                     }
                 }
             }
+
+            // the number is valid
             return true;
         }
 
+        /**
+         * Calculates the bulls and cows of two numbers
+         */
         function calculateBullsAndCows(a, b) {
             let result = {
                 bulls: 0,
                 cows: 0
             };
+            // convert string to array of digits
             let aDigits = a.split("");
             let bDigits = b.split("");
 
-            console.log(aDigits);
-            console.log(bDigits);
+            // logic for comparing digits and positions
             for (let i = 0; i < 4; i++) {
                 for (let j = 0; j < 4; j++) {
                     if (aDigits[i] == bDigits[j]) {
@@ -60,16 +58,17 @@
                         else {
                             result.cows++;
                         }
+                        // match was found, so skip the rest of the iterations of j counter
                         break;
                     }
                 }
             }
 
+            // return the calculated object with properties
             return result;
         }
 
-        console.log(calculateBullsAndCows('1567', '1763'));
-
+        
         let lastShownContainer = "home_scene_container";
         function showContainer(containerId) {
             if (lastShownContainer != "") {
@@ -361,6 +360,7 @@
                 document.getElementById("player_span").innerHTML = playerNames[playerIndex];
                 document.getElementById("bull").innerHTML = 0 + 'x';
                 document.getElementById("cow").innerHTML = 0 + 'x';
+                document.getElementById("continue_button").classList.remove("off");
                 if (playerIndex == 0) {
                     document.getElementById("buttons_pl_one").classList.remove("off");
                     document.getElementById("buttons_pl_two").classList.add("off");
@@ -379,6 +379,7 @@
                 if (isNumberValid(numberValue) == true) {
                     // save player number into playerNumbers
                     mainPlayerGuesses[currentPlayerIndex] = numberValue;
+                    document.getElementById("tick_button").classList.remove("off");
                     if (currentPlayerIndex == 0) {
                         // next player's turn
                         currentPlayerIndex = 1;
@@ -397,6 +398,7 @@
                         prepareMainPlayerGuessesUI(currentPlayerIndex);
                     }
                     historyNumbersList(bullsAndCowsResult);
+
                     // //if valid goes to the next person or main game scene
                     //
                 }
@@ -409,10 +411,11 @@
 
             function inputPlayerGuess() {
                 var numberValue = document.getElementById("player_guess_number").value;
-                if (isNumberValid(numberValue)) {
 
+                if (isNumberValid(numberValue)) {
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
+                    document.getElementById("tick_button").classList.add("off");
                     if (currentPlayerIndex == 0) {
                         bullsAndCowsResult = calculateBullsAndCows(playerNumbers[1], numberValue);
                     } else {
@@ -439,11 +442,11 @@
             ];
 
             function onInputEntered(numberValue, bullsAndCowsResult) {
-                historyNumbersPlayer[currentPlayerIndex].push(numberValue);
-                historyNumbersList(bullsAndCowsResult);
+                historyNumbersPlayer[currentPlayerIndex].push(numberValue + " - " + bullsAndCowsResult.bulls + " bulls, " + bullsAndCowsResult.cows + " cows.");
+                historyNumbersList();
             }
 
-            function historyNumbersList(bullsAndCowsResult) {
+            function historyNumbersList() {
                 var historyElement = document.getElementById("history_numbers");
                 historyElement.classList.remove("off");
                 historyElement.innerHTML = "";
@@ -453,13 +456,13 @@
                 else {
                     historyElement.classList.remove("off");
                 }
-                createHistoryElements(historyNumbersPlayer[currentPlayerIndex], historyElement, bullsAndCowsResult)
+                createHistoryElements(historyNumbersPlayer[currentPlayerIndex], historyElement)
             }
 
-            function createHistoryElements(playerArray, historyElement, bullsAndCowsResult) {
+            function createHistoryElements(playerArray, historyElement) {
                 playerArray.forEach(element => {
                     var historySpan = document.createElement("span");
-                    historySpan.innerHTML = element + " - " + bullsAndCowsResult.bulls + " bulls, " + bullsAndCowsResult.cows + " cows.";
+                    historySpan.innerHTML = element;
                     historyElement.appendChild(historySpan);
                 })
             }
@@ -521,7 +524,7 @@
                             <div class="playerInput">
                                 <input class="inputPlayerNumber" type="text" id="player_guess_number" minlength="4"
                                     maxlength="4">
-                                <button class="tick" type="button" onclick="inputPlayerGuess()">✓
+                                <button class="tick" id="tick_button" type="button" onclick="inputPlayerGuess()">✓
                                 </button>
                             </div>
                         </label>
