@@ -88,16 +88,31 @@
             lastShownContainer = containerId;
         }
 
+        function handleRevengeButton() {
+            preparePlayerDetailsUI(0);
+
+            showContainer('player_details_scene_container');
+            focusNumber();
+        }
+
         function handleNewGameButton() {
+            playerNames = ['', '']
             preparePlayerDetailsUI(0);
             showContainer('player_details_scene_container');
             focusName();
         }
 
+
         function preparePlayerDetailsUI(playerIndex) {
+            historyElement = ["", ""];
+            historyNumbersPlayer = [[], []];
+            playerNumbers = ["", ""];
+            mainPlayerGuesses = ['', '']
+            document.getElementById("history_numbers").innerHTML = '';
+            document.getElementById("history_numbers").classList.add("off");
             document.getElementById("player_details_name_error").classList.add("off");
             document.getElementById("number_container").classList.add("off");
-            document.getElementById("player_name").value = "";
+            document.getElementById("player_name").value = playerNames[playerIndex];
             document.getElementById("player_number").value = "";
 
         }
@@ -287,7 +302,7 @@
                     </div>
                     <div class="buttonOptions">
                         <button class="buttonPlay" type="button" id="revengeButton"
-                            onclick="showContainer('player_details_scene_container')">REVENGE</button>
+                            onclick="handleRevengeButton()">REVENGE</button>
                         <button class="buttonPlay" type="button" id="newGameButton" onclick="handleNewGameButton()">NEW
                             GAME</button>
                         <button class="buttonPlay" type="button" id="exitButton"
@@ -376,6 +391,7 @@
                     document.getElementById("buttons_pl_one").classList.add("off");
                     document.getElementById("buttons_pl_two").classList.remove("off");
                 }
+                document.getElementById("player_guess_number").focus();
             }
 
             function checkGuessesAndContinue() {
