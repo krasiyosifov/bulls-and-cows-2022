@@ -36,6 +36,9 @@
     text-align: center;
     font-size: 75px;
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .scene_container {
@@ -77,7 +80,7 @@
 .playerInput {
     text-align: center;
     display: flex;
-    
+
 }
 
 .mainContainer {
@@ -144,7 +147,8 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
-.continue{
+
+.continue {
     width: 120px;
     display: flex;
     flex-direction: row;
@@ -215,6 +219,13 @@
 
 
 .cowImgRotate {
+    width: 23vh;
+    height: 23vh;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.bullsImgRotate {
     width: 23vh;
     height: 23vh;
     margin-top: 20px;
@@ -385,11 +396,10 @@ body {
     transform: rotate(135deg);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
-        margin: 40px 60px;
-        align-items: stretch;
     }
+
 }
