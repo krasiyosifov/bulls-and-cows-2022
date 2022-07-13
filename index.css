@@ -251,7 +251,7 @@ body {
     display: flex;
     align-items: center;
     padding: 20px;
-    ;
+    justify-content: center;
 }
 
 .howToPlayModal {
@@ -360,3 +360,16 @@ body {
     -o-transform: rotate(135deg);
     transform: rotate(135deg);
 }
+
+
+@media only screen and (min-width: 768px) {
+
+    #main_game_screen_container .playerInput {
+      justify-content: center;
+      margin-top: 15px;
+    }
+    #main_game_screen_container .gameContainer {
+        
+      }
+    
+  }
