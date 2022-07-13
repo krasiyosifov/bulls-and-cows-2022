@@ -36,6 +36,9 @@
     text-align: center;
     font-size: 75px;
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .scene_container {
@@ -77,6 +80,10 @@
 .playerInput {
     text-align: center;
     display: flex;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1f21cef71754cd2c721587277b25bfe65fc4b72b
 }
 
 .mainContainer {
@@ -140,6 +147,29 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
+<<<<<<< HEAD
+=======
+
+.continue {
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #777764;
+    border: 2px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 2px 2px 0px 0.2px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-items: center
+}
+>>>>>>> 1f21cef71754cd2c721587277b25bfe65fc4b72b
 
 .closeButton {
     width: 35px;
@@ -192,6 +222,13 @@
 
 
 .cowImgRotate {
+    width: 23vh;
+    height: 23vh;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.bullsImgRotate {
     width: 23vh;
     height: 23vh;
     margin-top: 20px;
@@ -360,6 +397,7 @@ body {
     transform: rotate(135deg);
 }
 
+<<<<<<< HEAD
 @media only screen and (max-width: 768px){
     #player_details_scene_container.sketchy.buttons{
         flex-direction: column;
@@ -375,5 +413,12 @@ body {
     }
     #player_details_scene_container.inputPlayerName{
         justify-content: center;
+=======
+@media only screen and (min-width:768px) {
+    #winning_page_scene_container .buttonOptions {
+        display: flex;
+        flex-direction: column;
+>>>>>>> 1f21cef71754cd2c721587277b25bfe65fc4b72b
     }
+
 }
