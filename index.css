@@ -194,7 +194,7 @@
     left: 5px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
     .button-54 {
         padding: 0.25em 0.75em;
     }
@@ -426,7 +426,7 @@ body {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 900px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
