@@ -219,16 +219,16 @@
 .cowImgRotate {
     width: 23vh;
     height: 23vh;
-    margin-top: 20px;
-    padding-left: 10px;
+
 }
+
 
 .bullsImgRotate {
     width: 23vh;
     height: 23vh;
-    margin-top: 20px;
-    padding-left: 10px;
+   
 }
+
 
 .close:hover,
 .close:focus {
@@ -400,4 +400,5 @@ body {
         flex-direction: column;
     }
 
+    
 }
