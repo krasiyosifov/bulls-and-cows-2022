@@ -52,10 +52,6 @@
     margin: 0;
 }
 
-.playerDetailsMargin {
-    margin-bottom: 20px
-}
-
 .winningLabels {
     text-align: center;
     display: flex;
@@ -79,7 +75,7 @@
 }
 
 .playerInput {
-
+    margin: 15px 0;
     display: flex;
     justify-content: center;
 
@@ -415,14 +411,8 @@ body {
         justify-content: center;
     }
 
-    #main_game_screen_container .playerInput {
-        justify-content: center;
-        margin-top: 15px;
-    }
-
     .playerInput {
         justify-content: center;
-        margin-top: 15px;
     }
 
 }
