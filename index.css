@@ -14,7 +14,7 @@
 .buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -42,7 +42,7 @@
 }
 
 .scene_container {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     display: flex;
     flex-direction: column;
 }
@@ -86,7 +86,7 @@
 .mainContainer {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     background-color: #ebebde;
 
