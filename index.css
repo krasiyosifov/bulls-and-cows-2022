@@ -80,10 +80,7 @@
 .playerInput {
     text-align: center;
     display: flex;
-<<<<<<< HEAD
-=======
 
->>>>>>> 1f21cef71754cd2c721587277b25bfe65fc4b72b
 }
 
 .mainContainer {
@@ -147,8 +144,7 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
-<<<<<<< HEAD
-=======
+
 
 .continue {
     width: 120px;
@@ -169,7 +165,7 @@
     touch-action: manipulation;
     align-items: center
 }
->>>>>>> 1f21cef71754cd2c721587277b25bfe65fc4b72b
+
 
 .closeButton {
     width: 35px;
@@ -397,13 +393,14 @@ body {
     transform: rotate(135deg);
 }
 
-<<<<<<< HEAD
-@media only screen and (max-width: 768px){
-    #player_details_scene_container.sketchy.buttons{
+
+@media only screen and (max-width: 768px) {
+    #player_details_scene_container.sketchy.buttons {
         flex-direction: column;
         margin: 0;
     }
-    #player_details_scene_container.sketchy{
+
+    #player_details_scene_container.sketchy {
         padding: 4rem 8rem;
         display: inline-block;
         border: 3px solid #333333;
@@ -411,14 +408,16 @@ body {
         border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
         position: relative;
     }
-    #player_details_scene_container.inputPlayerName{
+
+    #player_details_scene_container.inputPlayerName {
         justify-content: center;
-=======
+    }
+}
 @media only screen and (min-width:768px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
->>>>>>> 1f21cef71754cd2c721587277b25bfe65fc4b72b
+
     }
 
 }
