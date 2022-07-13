@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
+    width: 100%;
 }
 
 
@@ -90,7 +91,7 @@
     height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     background-color: #ebebde;
-
+    align-items: center;
 }
 
 .errorLabel {
