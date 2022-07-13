@@ -89,7 +89,11 @@
     height: 100vh;
     width: 100vw;
     background-color: #ebebde;
+<<<<<<< HEAD
     
+=======
+    align-items: center
+>>>>>>> 8dfa68903b9840266ee368ee527ac87221e1c80a
 }
 
 .errorLabel {
@@ -361,21 +365,16 @@ body {
     box-shadow: 0 9px#4f4747;
     margin: 5px 5px;
 }
-
 .button:hover {
     background-color: #555555
 }
-
 .button:active {
     background-color: #555555;
     box-shadow: 0 5px #363636;
     transform: translateY(5px);
 }
-
-
 .buttonStrikeThrough {
     position: relative;
-
 }
 
 .buttonStrikeThrough:before {
@@ -395,8 +394,9 @@ body {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:280px) {
     #player_details_scene_container.sketchy.buttons {
+        display: flex;
         flex-direction: column;
         margin: 0;
     }
@@ -405,26 +405,40 @@ body {
         padding: 4rem 8rem;
         display: inline-block;
         border: 3px solid #333333;
-        font-size: 5rem;
+        font-size: 3rem;
         border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
         position: relative;
+
     }
 
     #player_details_scene_container.inputPlayerName {
         justify-content: center;
     }
-    
+
     #main_game_screen_container .playerInput {
-      justify-content: center;
-      margin-top: 15px;
+        justify-content: center;
+        margin-top: 15px;
     }
+
+    .playerInput {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
 }
+
 @media only screen and (min-width:768px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
+    }
+
+    .sketchy {
+        width: 100%;
 
     }
 
-    
+    .responsiveContainer {
+        width: 90%;
+    }
 }
