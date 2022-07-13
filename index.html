@@ -20,9 +20,12 @@
             if (digits.length != 4) {
                 return false;
             }
-
+            
             // check of duplicated digits
             for (let i = 0; i <= 2; i++) {
+                if(digits[0]==0){
+                    return false;
+                }
                 let d1 = digits[i];
                 for (let j = i + 1; j <= 3; j++) {
                     let d2 = digits[j];
@@ -68,7 +71,7 @@
             return result;
         }
 
-        
+
         let lastShownContainer = "home_scene_container";
         function showContainer(containerId) {
             if (lastShownContainer != "") {
@@ -416,7 +419,7 @@
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
                     document.getElementById("tick_button").classList.add("off");
-                    document.getElementById("player_guess_number").setAttribute("disabled","");
+                    document.getElementById("player_guess_number").setAttribute("disabled", "");
                     if (currentPlayerIndex == 0) {
                         bullsAndCowsResult = calculateBullsAndCows(playerNumbers[1], numberValue);
                     } else {
@@ -546,10 +549,10 @@
                         <img src="images/cowCounter.png" style="width:100px;height:100px;">
                     </div>
                 </div>
-
-
+                <div class="emptyContainer"></div>
             </div>
         </div>
+    </div>
 
 
 </body>
