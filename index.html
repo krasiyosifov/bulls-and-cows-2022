@@ -3,33 +3,29 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="index.css">
     <title>Bulls and Cows game</title>
     <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
     <script>
-
-        function myFunction() {
-            var numberValue = document.getElementById("my_number").value;
-            console.log(numberValue);
-            if (isNumberValid(numberValue)) {
-                console.log("the number is valid");
-                // TODO: put the result in the validation_result container
-            } else {
-                console.log("the number is invalid");
-                // TODO: put the result in the validation_result container
-            }
-        }
-
+        /**
+         * Validates if the given number is a valid number based on the rules of the game
+         */
         function isNumberValid(numberAsString) {
+            // convert string number to array
             var digits = numberAsString.split("");
-            console.log(digits);
+
+            // check if the number size is valid
             if (digits.length != 4) {
                 return false;
             }
+            
+            // check of duplicated digits
             for (let i = 0; i <= 2; i++) {
+                if(digits[0]==0){
+                    return false;
+                }
                 let d1 = digits[i];
                 for (let j = i + 1; j <= 3; j++) {
                     let d2 = digits[j];
@@ -38,19 +34,24 @@
                     }
                 }
             }
+
+            // the number is valid
             return true;
         }
 
+        /**
+         * Calculates the bulls and cows of two numbers
+         */
         function calculateBullsAndCows(a, b) {
             let result = {
                 bulls: 0,
                 cows: 0
             };
+            // convert string to array of digits
             let aDigits = a.split("");
             let bDigits = b.split("");
 
-            console.log(aDigits);
-            console.log(bDigits);
+            // logic for comparing digits and positions
             for (let i = 0; i < 4; i++) {
                 for (let j = 0; j < 4; j++) {
                     if (aDigits[i] == bDigits[j]) {
@@ -60,15 +61,16 @@
                         else {
                             result.cows++;
                         }
+                        // match was found, so skip the rest of the iterations of j counter
                         break;
                     }
                 }
             }
 
+            // return the calculated object with properties
             return result;
         }
 
-        console.log(calculateBullsAndCows('1567', '1763'));
 
         let lastShownContainer = "home_scene_container";
         function showContainer(containerId) {
@@ -196,7 +198,7 @@
                     winnerIndex = 1;
                 }
                 // update name of the winning player
-                document.getElementById("winner_name").innerHTML=playerNames[winnerIndex];
+                document.getElementById("winner_name").innerHTML = playerNames[winnerIndex];
                 // show container with text for single player win
                 document.getElementById("single_winner_container").classList.remove("off");
             }
@@ -212,8 +214,7 @@
                 <h2 class="homePageH2">Bulls
                     <div class="homePageImages">
 
-                        <img class="bullImgRotate" src="images/bullHomeScreen.png" width="160" height="160"
-                            style="padding-right: 5px;">
+                        <img class="bullsImgRotate" src="images/bullHomeScreen.png">
                         &
                         <img class="cowImgRotate" src="images/cowHomeScreen.png">
 
@@ -238,7 +239,7 @@
                 <div class="sketchy">
                     <form>
                         <div class="detailsPlayer">
-                            <label class = "playerDetailsMargin"for="name">Enter nickname:</label>
+                            <label class="playerDetailsMargin" for="name">Enter nickname:</label>
                             <div class="playerInput">
                                 <input class="inputPlayerName" type="text" id="player_name">
                                 <button class="tick" type="button" onclick="checkNameAndContinue()">✓</button>
@@ -246,12 +247,12 @@
                             <p class="errorLabel off" id="player_details_name_error">Please enter your nickname</p>
                         </div>
                         <div class="detailsPlayer off" id="number_container">
-                            <label class = "playerDetailsMargin" for="number"> <span id="player_details_name">Vicky</span> enter number:</label>
+                            <label class="playerDetailsMargin" for="number"> <span id="player_details_name">Vicky</span>
+                                enter number:</label>
                             <div class="playerInput">
                                 <input class="inputPlayerNumber" type="text" id="player_number" minlength="4"
                                     maxlength="4">
-                                <button  class="tick" type="button"
-                                    onclick="checkNumberAndContinue()">✓</button>
+                                <button class="tick" type="button" onclick="checkNumberAndContinue()">✓</button>
                             </div>
                             <p class="errorLabel off" id="player_details_number_error">Invalid number! Try again!</p>
                         </div>
@@ -270,23 +271,24 @@
         <!-- here goes the HTML code -->
         <div class="endGame">
             <form>
-            <div class = "sketchy">
-                <div class="winningLabels off" id="single_winner_container">
-                    <span><b>THE WINNER IS:</b></span><br>
-                    <span id="winner_name">...</span>
+                <div class="sketchy">
+                    <div class="winningLabels off" id="single_winner_container">
+                        <span><b>THE WINNER IS:</b></span><br>
+                        <span id="winner_name">...</span>
+                    </div>
+                    <div class="winningLabels off" id="both_winners_container">
+                        <span>CONGRATS YOU</span><br>
+                        <span>BOTH WIN!</span>
+                    </div>
+                    <div class="buttonOptions">
+                        <button class="buttonPlay" type="button" id="revengeButton"
+                            onclick="showContainer('player_details_scene_container')">REVENGE</button>
+                        <button class="buttonPlay" type="button" id="newGameButton" onclick="handleNewGameButton()">NEW
+                            GAME</button>
+                        <button class="buttonPlay" type="button" id="exitButton"
+                            onclick="showContainer('home_scene_container')">EXIT</button>
+                    </div>
                 </div>
-                <div class="winningLabels off" id="both_winners_container">
-                    <span>CONGRATS YOU</span><br>
-                    <span>BOTH WIN!</span>
-                </div>
-                <div class="buttonOptions">
-                    <button class = "buttonPlay" type="button" id="revengeButton"
-                        onclick="showContainer('player_details_scene_container')">REVENGE</button>
-                    <button class = "buttonPlay" type="button" id="newGameButton"
-                        onclick="handleNewGameButton()">NEW GAME</button>
-                    <button class = "buttonPlay" type="button" id="exitButton" onclick="showContainer('home_scene_container')">EXIT</button>
-                </div>
-            </div>
             </form>
         </div>
     </div>
@@ -311,7 +313,7 @@
             }
         </script>
         <div class="modalContent">
-            <button class = "closeButton" type="button" onclick="closeModal()">X</button>
+            <button class="closeButton" type="button" onclick="closeModal()">X</button>
             <h1>How to play?</h1>
             <p>The game can be played by 2 people.</p>
             <p>First, Player1 enters their name and clicks the check button when they are done. After that a new text
@@ -361,6 +363,7 @@
                 document.getElementById("player_span").innerHTML = playerNames[playerIndex];
                 document.getElementById("bull").innerHTML = 0 + 'x';
                 document.getElementById("cow").innerHTML = 0 + 'x';
+                document.getElementById("player_guess_number").removeAttribute("disabled");
                 if (playerIndex == 0) {
                     document.getElementById("buttons_pl_one").classList.remove("off");
                     document.getElementById("buttons_pl_two").classList.add("off");
@@ -379,6 +382,7 @@
                 if (isNumberValid(numberValue) == true) {
                     // save player number into playerNumbers
                     mainPlayerGuesses[currentPlayerIndex] = numberValue;
+                    document.getElementById("tick_button").classList.remove("off");
                     if (currentPlayerIndex == 0) {
                         // next player's turn
                         currentPlayerIndex = 1;
@@ -397,6 +401,7 @@
                         prepareMainPlayerGuessesUI(currentPlayerIndex);
                     }
                     historyNumbersList(bullsAndCowsResult);
+
                     // //if valid goes to the next person or main game scene
                     //
                 }
@@ -409,10 +414,12 @@
 
             function inputPlayerGuess() {
                 var numberValue = document.getElementById("player_guess_number").value;
-                if (isNumberValid(numberValue)) {
 
+                if (isNumberValid(numberValue)) {
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
+                    document.getElementById("tick_button").classList.add("off");
+                    document.getElementById("player_guess_number").setAttribute("disabled", "");
                     if (currentPlayerIndex == 0) {
                         bullsAndCowsResult = calculateBullsAndCows(playerNumbers[1], numberValue);
                     } else {
@@ -439,11 +446,11 @@
             ];
 
             function onInputEntered(numberValue, bullsAndCowsResult) {
-                historyNumbersPlayer[currentPlayerIndex].push(numberValue);
-                historyNumbersList(bullsAndCowsResult);
+                historyNumbersPlayer[currentPlayerIndex].push(numberValue + " - " + bullsAndCowsResult.bulls + " bulls, " + bullsAndCowsResult.cows + " cows.");
+                historyNumbersList();
             }
 
-            function historyNumbersList(bullsAndCowsResult) {
+            function historyNumbersList() {
                 var historyElement = document.getElementById("history_numbers");
                 historyElement.classList.remove("off");
                 historyElement.innerHTML = "";
@@ -453,13 +460,13 @@
                 else {
                     historyElement.classList.remove("off");
                 }
-                createHistoryElements(historyNumbersPlayer[currentPlayerIndex], historyElement, bullsAndCowsResult)
+                createHistoryElements(historyNumbersPlayer[currentPlayerIndex], historyElement)
             }
 
-            function createHistoryElements(playerArray, historyElement, bullsAndCowsResult) {
+            function createHistoryElements(playerArray, historyElement) {
                 playerArray.forEach(element => {
                     var historySpan = document.createElement("span");
-                    historySpan.innerHTML = element + " - " + bullsAndCowsResult.bulls + " bulls, " + bullsAndCowsResult.cows + " cows.";
+                    historySpan.innerHTML = element;
                     historyElement.appendChild(historySpan);
                 })
             }
@@ -518,11 +525,16 @@
                     <div class="playerTurn">
                         <label for="name">
                             <span id="player_span">Player1</span>'s turn:
-                            <div class ="playerInput">
+                            <div class="playerInput">
                                 <input class="inputPlayerNumber" type="text" id="player_guess_number" minlength="4"
                                     maxlength="4">
-                                <button class="tick" type="button" onclick="inputPlayerGuess()">✓
+                                <button class="tick" id="tick_button" type="button" onclick="inputPlayerGuess()">
+                                    ✓
                                 </button>
+                                <div class="buttons">
+                                    <button class="continue off" id="continue_button" type="button"
+                                        onclick="checkGuessesAndContinue()">CONTINUE</button>
+                                </div>
                             </div>
                         </label>
                         <p class="errorLabel off" id="main_player_details_number_error">Invalid number! Try again!
@@ -537,14 +549,10 @@
                         <img src="images/cowCounter.png" style="width:100px;height:100px;">
                     </div>
                 </div>
-
-                <div class="buttons">
-                    <button class="buttonPlay off" id="continue_button" type="button"
-                        onclick="checkGuessesAndContinue()">CONTINUE</button>
-                </div>
-
+                <div class="emptyContainer"></div>
             </div>
         </div>
+    </div>
 
 
 </body>
