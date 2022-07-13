@@ -199,7 +199,6 @@
     flex-direction: column;
 }
 
-
 .endGame {
     display: flex;
     justify-content: center;
@@ -215,6 +214,13 @@
     width: 23vh;
     height: 23vh;
     margin-top: 20px;
+    padding-left: 10px;
+}
+
+.bullImgRotate {
+    width: 23vh;
+    height: 23vh;
+    margin-top: -20px;
     padding-left: 10px;
 }
 

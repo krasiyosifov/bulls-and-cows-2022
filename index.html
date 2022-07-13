@@ -3,32 +3,25 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="index.css">
     <title>Bulls and Cows game</title>
     <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
     <script>
-
-        function myFunction() {
-            var numberValue = document.getElementById("my_number").value;
-            console.log(numberValue);
-            if (isNumberValid(numberValue)) {
-                console.log("the number is valid");
-                // TODO: put the result in the validation_result container
-            } else {
-                console.log("the number is invalid");
-                // TODO: put the result in the validation_result container
-            }
-        }
-
+        /**
+         * Validates if the given number is a valid number based on the rules of the game
+         */
         function isNumberValid(numberAsString) {
+            // convert string number to array
             var digits = numberAsString.split("");
-            console.log(digits);
+
+            // check if the number size is valid
             if (digits.length != 4) {
                 return false;
             }
+
+            // check of duplicated digits
             for (let i = 0; i <= 2; i++) {
                 let d1 = digits[i];
                 for (let j = i + 1; j <= 3; j++) {
@@ -38,19 +31,24 @@
                     }
                 }
             }
+
+            // the number is valid
             return true;
         }
 
+        /**
+         * Calculates the bulls and cows of two numbers
+         */
         function calculateBullsAndCows(a, b) {
             let result = {
                 bulls: 0,
                 cows: 0
             };
+            // convert string to array of digits
             let aDigits = a.split("");
             let bDigits = b.split("");
 
-            console.log(aDigits);
-            console.log(bDigits);
+            // logic for comparing digits and positions
             for (let i = 0; i < 4; i++) {
                 for (let j = 0; j < 4; j++) {
                     if (aDigits[i] == bDigits[j]) {
@@ -60,16 +58,17 @@
                         else {
                             result.cows++;
                         }
+                        // match was found, so skip the rest of the iterations of j counter
                         break;
                     }
                 }
             }
 
+            // return the calculated object with properties
             return result;
         }
 
-        console.log(calculateBullsAndCows('1567', '1763'));
-
+        
         let lastShownContainer = "home_scene_container";
         function showContainer(containerId) {
             if (lastShownContainer != "") {
@@ -212,8 +211,7 @@
                 <h2 class="homePageH2">Bulls
                     <div class="homePageImages">
 
-                        <img class="bullImgRotate" src="images/bullHomeScreen.png" width="160" height="160"
-                            style="padding-right: 5px;">
+                        <img class="bullImgRotate" src="images/bullHomeScreen.png">
                         &
                         <img class="cowImgRotate" src="images/cowHomeScreen.png">
 
