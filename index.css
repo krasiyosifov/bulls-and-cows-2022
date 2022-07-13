@@ -89,6 +89,7 @@
     height: 100vh;
     width: 100vw;
     background-color: #ebebde;
+    
 }
 
 .errorLabel {
@@ -105,7 +106,6 @@
 .inputPlayerNumber {
     height: 30px;
     border-width: 2px;
-
 
 }
 
@@ -146,6 +146,7 @@
     touch-action: manipulation;
 }
 
+
 .continue {
     width: 120px;
     display: flex;
@@ -165,6 +166,7 @@
     touch-action: manipulation;
     align-items: center
 }
+
 
 .closeButton {
     width: 35px;
@@ -219,16 +221,16 @@
 .cowImgRotate {
     width: 23vh;
     height: 23vh;
-    margin-top: 20px;
-    padding-left: 10px;
+
 }
+
 
 .bullsImgRotate {
     width: 23vh;
     height: 23vh;
-    margin-top: 20px;
-    padding-left: 10px;
+   
 }
+
 
 .close:hover,
 .close:focus {
@@ -241,8 +243,6 @@
     position: absolute;
     right: 50px;
     bottom: 0;
-    display: flex;
-    flex-direction: row;
 }
 
 body {
@@ -284,7 +284,7 @@ body {
     display: flex;
     align-items: center;
     padding: 20px;
-    ;
+    justify-content: center;
 }
 
 .howToPlayModal {
@@ -361,21 +361,16 @@ body {
     box-shadow: 0 9px#4f4747;
     margin: 5px 5px;
 }
-
 .button:hover {
     background-color: #555555
 }
-
 .button:active {
     background-color: #555555;
     box-shadow: 0 5px #363636;
     transform: translateY(5px);
 }
-
-
 .buttonStrikeThrough {
     position: relative;
-
 }
 
 .buttonStrikeThrough:before {
@@ -394,7 +389,41 @@ body {
     transform: rotate(135deg);
 }
 
-@media screen and (max-width:768px) {
+
+@media only screen and (max-width:280px) {
+    #player_details_scene_container.sketchy.buttons {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #player_details_scene_container.sketchy {
+        padding: 4rem 8rem;
+        display: inline-block;
+        border: 3px solid #333333;
+        font-size: 3rem;
+        border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+        position: relative;
+
+    }
+
+    #player_details_scene_container.inputPlayerName {
+        justify-content: center;
+    }
+
+    #main_game_screen_container .playerInput {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .playerInput {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+}
+
+@media only screen and (min-width:768px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
@@ -406,3 +435,12 @@ body {
 
 
 }
+.sketchy {
+    width: 100%;
+
+}
+
+.responsiveContainer {
+    width: 90%;
+}
+

@@ -20,9 +20,12 @@
             if (digits.length != 4) {
                 return false;
             }
-
+            
             // check of duplicated digits
             for (let i = 0; i <= 2; i++) {
+                if(digits[0]==0){
+                    return false;
+                }
                 let d1 = digits[i];
                 for (let j = i + 1; j <= 3; j++) {
                     let d2 = digits[j];
@@ -231,8 +234,7 @@
     <div id="player_details_scene_container" class="scene_container off">
         <!-- here goes the HTML code -->
         <div class="mainContainer">
-            <div class="playerDetails">
-                <div></div>
+            <div class="playerDetails responsiveContainer" >
                 <div class="sketchy">
                     <form>
                         <div class="detailsPlayer">
@@ -256,7 +258,6 @@
 
                     </form>
                 </div>
-                <div></div>
             </div>
         </div>
         <button class="howToPlay" onclick="openModal()">?</button>
@@ -516,7 +517,6 @@
             <button class="howToPlay" type="button" onclick="openModal()">?</button>
 
             <div class="gameContainer">
-                <div class="emptyContainer"></div>
                 <div class="sketchy">
 
                     <div class="playerTurn">
@@ -546,10 +546,9 @@
                         <img src="images/cowCounter.png" style="width:100px;height:100px;">
                     </div>
                 </div>
-
-
             </div>
         </div>
+    </div>
 
 
 </body>
