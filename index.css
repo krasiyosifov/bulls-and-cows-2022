@@ -89,6 +89,8 @@
     height: 100vh;
     width: 100vw;
     background-color: #ebebde;
+    align-items: center
+    
 }
 
 .errorLabel {
