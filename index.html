@@ -68,7 +68,7 @@
             return result;
         }
 
-        
+
         let lastShownContainer = "home_scene_container";
         function showContainer(containerId) {
             if (lastShownContainer != "") {
@@ -416,7 +416,7 @@
                     document.getElementById("main_player_details_number_error").classList.add("off");
                     document.getElementById("continue_button").classList.remove("off");
                     document.getElementById("tick_button").classList.add("off");
-                    document.getElementById("player_guess_number").setAttribute("disabled","");
+                    document.getElementById("player_guess_number").setAttribute("disabled", "");
                     if (currentPlayerIndex == 0) {
                         bullsAndCowsResult = calculateBullsAndCows(playerNumbers[1], numberValue);
                     } else {
