@@ -90,8 +90,8 @@
 
         function handleRevengeButton() {
             preparePlayerDetailsUI(0);
-
             showContainer('player_details_scene_container');
+            resetGameData()
             focusNumber();
         }
 
@@ -99,24 +99,25 @@
             playerNames = ['', '']
             preparePlayerDetailsUI(0);
             showContainer('player_details_scene_container');
+            resetGameData()
             focusName();
         }
 
-
-        function preparePlayerDetailsUI(playerIndex) {
+        function resetGameData() {
             historyElement = ["", ""];
             historyNumbersPlayer = [[], []];
             playerNumbers = ["", ""];
             mainPlayerGuesses = ['', '']
             document.getElementById("history_numbers").innerHTML = '';
             document.getElementById("history_numbers").classList.add("off");
+        }
+
+        function preparePlayerDetailsUI(playerIndex) {
             document.getElementById("player_details_name_error").classList.add("off");
             document.getElementById("number_container").classList.add("off");
             document.getElementById("player_name").value = playerNames[playerIndex];
             document.getElementById("player_number").value = "";
-
         }
-
 
         function focusName() {
             document.getElementById("player_name").focus();
