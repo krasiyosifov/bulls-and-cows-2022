@@ -109,6 +109,9 @@
             playerNumbers = ["", ""];
             mainPlayerGuesses = ['', ''];
             winners = [false, false];
+            let array = document.querySelectorAll(".buttonStrikeThrough");
+            array.forEach(element => element.classList.remove("buttonStrikeThrough"));
+            console.log(array);
             document.getElementById("history_numbers").innerHTML = '';
             document.getElementById("history_numbers").classList.add("off");
         }
