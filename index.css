@@ -406,6 +406,10 @@ body {
         position: relative;
 
     }
+    .howToPlay {
+        width: 70px;
+        height: 70px;
+    }
 
     #player_details_scene_container.inputPlayerName {
         justify-content: center;
