@@ -209,7 +209,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: 48E08E;
+    background-color: #ebebde;
     height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
 }
@@ -406,6 +406,7 @@ body {
         position: relative;
 
     }
+
     .howToPlay {
         width: 70px;
         height: 70px;
