@@ -191,7 +191,7 @@
     left: 5px;
 }
 
-@media (min-width: 900px) {
+@media screen and (min-width: 900px) {
     .button-54 {
         padding: 0.25em 0.75em;
     }
@@ -390,7 +390,7 @@ body {
 }
 
 
-@media only screen and (max-width:280px) {
+@media screen and (max-width:280px) {
     #player_details_scene_container.sketchy.buttons {
         display: flex;
         flex-direction: column;
@@ -422,7 +422,7 @@ body {
 
 }
 
-@media only screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
