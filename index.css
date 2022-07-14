@@ -449,7 +449,7 @@ body {
     }
 
     .mainGameImagesContainer label {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .mainGameImagesContainer img {
@@ -463,7 +463,7 @@ body {
     }
 
     .homePageImages {
-        font-size: unset;
+        font-size: 30px;
     }
 
     .homePageH2 {
