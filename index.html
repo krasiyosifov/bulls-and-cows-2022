@@ -139,6 +139,7 @@
         }
 
         function preparePlayerDetailsUI(playerIndex) {
+            document.getElementById("enterNickname").innerHTML = 'Player ' + (playerIndex + 1) + ' nickname:';
             document.getElementById("player_details_name_error").classList.add("off");
             document.getElementById("number_container").classList.add("off");
             document.getElementById("player_name").value = playerNames[playerIndex];
@@ -290,7 +291,7 @@
                 <div class="sketchy">
                     <form>
                         <div class="detailsPlayer">
-                            <label for="name">Enter nickname:</label>
+                            <label id="enterNickname" for="name">Enter nickname:</label>
                             <div class="playerInput">
                                 <input class="inputPlayerName" type="text" id="player_name">
                                 <button class="tick" type="button" onclick="checkNameAndContinue()">✓</button>
@@ -536,16 +537,7 @@
         <div class="mainContainer">
 
             <div class="gameContainer responsiveContainer">
-                <div id="history_numbers" class="off" style="display: flex;
-                flex-direction: column;
-                width: fit-content;
-                position: absolute;
-                z-index: 2;
-                border: 1px solid white;
-                left: 10px;
-                padding: 5px;
-                background: white;
-                top:10px;">
+                <div id="history_numbers" class="historyNumbers off">
                 </div>
                 <div class="btn-group" id="buttons_pl_one">
                     <button class="numberButton" type="button" onclick="numberButtonClicked(event)">0</button>

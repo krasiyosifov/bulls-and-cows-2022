@@ -183,20 +183,6 @@
     right: 5px;
 }
 
-
-
-.button-54:active {
-    box-shadow: 0px 0px 0px 0px;
-    top: 5px;
-    left: 5px;
-}
-
-@media screen and (min-width: 900px) {
-    .button-54 {
-        padding: 0.25em 0.75em;
-    }
-}
-
 .detailsPlayer {
     display: flex;
     justify-content: center;
@@ -210,22 +196,22 @@
     justify-content: center;
     align-items: center;
     background-color: #ebebde;
-    height: calc(var(--vh, 1vh) * 100);
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 
 
 .cowImgRotate {
-    width: 23vh;
-    height: 23vh;
+    width: 22vh;
+    height: 22vh;
 
 }
 
 
 .bullsImgRotate {
-    width: 23vh;
-    height: 23vh;
+    width: 22vh;
+    height: 22vh;
 
 }
 
@@ -267,7 +253,8 @@ body {
 }
 
 .sketchy {
-    padding: 4rem 8rem;
+    overflow-wrap: anywhere;
+    padding: 30px;
     display: inline-block;
     border: 3px solid #333333;
     font-size: 2.5rem;
@@ -287,7 +274,7 @@ body {
 .howToPlayModal {
     position: fixed;
     display: none;
-    z-index: 1;
+    z-index: 3;
     left: 0;
     top: 0;
     width: 100%;
@@ -298,7 +285,7 @@ body {
 }
 
 .modalContent {
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -306,7 +293,9 @@ body {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
+    height: 80%;
     width: 80%;
+    overflow-y: scroll;
 }
 
 .historyNumbers {
@@ -389,6 +378,18 @@ body {
     transform: rotate(135deg);
 }
 
+.historyNumbers {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: absolute;
+    z-index: 2;
+    border: 1px solid white;
+    left: 10px;
+    padding: 5px;
+    background: white;
+    top: 10px;
+}
 
 @media screen and (max-width:280px) {
     #player_details_scene_container.sketchy.buttons {
@@ -408,8 +409,8 @@ body {
     }
 
     .howToPlay {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
 
     #player_details_scene_container.inputPlayerName {
@@ -422,10 +423,49 @@ body {
 
 }
 
+@media screen and (max-width: 600px) {
+    #home_scene_container .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mainGameImagesContainer {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .mainGameImagesContainer label {
+        font-size: 1.8rem;
+    }
+
+    .mainGameImagesContainer img {
+        width: 75px !important;
+        height: 75px !important;
+    }
+
+    .historyNumbers {
+        max-height: 100px;
+        overflow: scroll;
+    }
+
+    .homePageImages {
+        font-size: 30px;
+    }
+
+    .homePageH2 {
+        font-size: 5rem;
+    }
+
+    #home_scene_container .buttons .buttonPlay {
+        margin-top: 20px;
+    }
+}
+
 @media screen and (max-width: 900px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
+        padding: 0;
     }
 
     #winning_page_scene_container .buttonPlay {
@@ -433,8 +473,8 @@ body {
     }
 
     .howToPlay {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
 
     .responsiveContainer {
@@ -448,6 +488,8 @@ body {
         left: 5px;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
     }
 
     .sketchy {
