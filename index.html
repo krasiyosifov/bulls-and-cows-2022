@@ -4,8 +4,9 @@
 
 <head>
     <title>Bulls and Cows game</title>
-    <link rel="stylesheet" href="index.css" />
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com
     ">
     <link rel="preconnect" href="https://fonts.gstatic.com
@@ -314,8 +315,8 @@
 
     <div id="winning_page_scene_container" class="scene_container off">
         <!-- here goes the HTML code -->
-        <div class="endGame">
-            <form>
+        <div class="mainContainer">
+            <div class="endGame responsiveContainer">
                 <div class="sketchy">
                     <div class="winningLabels off" id="single_winner_container">
                         <span><b>THE WINNER IS:</b></span><br>
@@ -334,7 +335,7 @@
                             onclick="showContainer('home_scene_container')">EXIT</button>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 
