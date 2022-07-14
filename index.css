@@ -210,8 +210,8 @@
     justify-content: center;
     align-items: center;
     background-color: #ebebde;
-    height: calc(var(--vh, 1vh) * 100);
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -392,6 +392,18 @@ body {
     transform: rotate(135deg);
 }
 
+.historyNumbers {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: absolute;
+    z-index: 2;
+    border: 1px solid white;
+    left: 10px;
+    padding: 5px;
+    background: white;
+    top: 10px;
+}
 
 @media screen and (max-width:280px) {
     #player_details_scene_container.sketchy.buttons {
@@ -431,6 +443,25 @@ body {
         flex-direction: column;
     }
 
+    .mainGameImagesContainer {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .mainGameImagesContainer label {
+        font-size: 2rem;
+    }
+
+    .mainGameImagesContainer img {
+        width: 75px !important;
+        height: 75px !important;
+    }
+
+    .historyNumbers {
+        max-height: 100px;
+        overflow: scroll;
+    }
+
     .homePageImages {
         font-size: unset;
     }
@@ -448,6 +479,7 @@ body {
     #winning_page_scene_container .buttonOptions {
         display: flex;
         flex-direction: column;
+        padding: 0;
     }
 
     #winning_page_scene_container .buttonPlay {
@@ -455,8 +487,8 @@ body {
     }
 
     .howToPlay {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
 
     .responsiveContainer {
