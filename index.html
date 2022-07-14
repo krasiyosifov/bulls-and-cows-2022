@@ -32,9 +32,16 @@
         function isNumberValid(numberAsString) {
             // convert string number to array
             var digits = numberAsString.split("");
-
+            // convert number from string to integer
+            let numberAsInt = parseInt(numberAsString);
+            
             // check if the number size is valid
             if (digits.length != 4) {
+                return false;
+            }
+
+            // compare the integer number for outside of valid range
+            if (Number.isNaN(numberAsInt) || numberAsInt < 1023 || numberAsInt > 9876) {
                 return false;
             }
 
