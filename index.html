@@ -273,6 +273,7 @@
             </div>
             <div class="buttons">
                 <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
+                <button id="credits"class="howToPlay" onclick="openModal()">Credits</button>
                 <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
             </div>
         </div>
@@ -394,7 +395,17 @@
     </div>
     </div>
 
-
+    <div class="modalContent">
+        <button class="closeButton" type="button" onclick="closeModal()">X</button>
+        <h1>Credits</h1>
+        <p>Ivayla Todorova</p>
+        <p>Viktorya Novikova</p>
+        <p>Boyana Prodanova</p>
+        <p>Vanesa Selin</p>
+        <p>Ekaterina Denizova</p>
+    </div>
+</div>
+</div>
     <div id="main_game_screen_container" class="scene_container off">
 
         <!-- here goes the HTML code -->
@@ -577,7 +588,7 @@
                         </label>
                         <p class="errorLabel off" id="main_player_details_number_error">Invalid number! Try again!
                             </br>
-                            <a href="#" onclick="openModal()">How To Play?</a>
+                            <a href="javascript:void(0)" onclick="openModal()">How To Play?</a>
                         </p>
                     </div>
                     <div class="mainGameImagesContainer">
