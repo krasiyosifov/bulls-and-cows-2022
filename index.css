@@ -217,15 +217,15 @@
 
 
 .cowImgRotate {
-    width: 23vh;
-    height: 23vh;
+    width: 22vh;
+    height: 22vh;
 
 }
 
 
 .bullsImgRotate {
-    width: 23vh;
-    height: 23vh;
+    width: 22vh;
+    height: 22vh;
 
 }
 
@@ -267,7 +267,8 @@ body {
 }
 
 .sketchy {
-    padding: 4rem 8rem;
+    overflow-wrap: anywhere;
+    padding: 30px;
     display: inline-block;
     border: 3px solid #333333;
     font-size: 2.5rem;
@@ -298,7 +299,7 @@ body {
 }
 
 .modalContent {
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -306,7 +307,9 @@ body {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
+    height: 80%;
     width: 80%;
+    overflow-y: scroll;
 }
 
 .historyNumbers {
@@ -422,6 +425,25 @@ body {
 
 }
 
+@media screen and (max-width: 600px) {
+    #home_scene_container .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .homePageImages {
+        font-size: unset;
+    }
+
+    .homePageH2 {
+        font-size: 5rem;
+    }
+
+    #home_scene_container .buttons .buttonPlay {
+        margin-top: 20px;
+    }
+}
+
 @media screen and (max-width: 900px) {
     #winning_page_scene_container .buttonOptions {
         display: flex;
@@ -448,6 +470,8 @@ body {
         left: 5px;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
     }
 
     .sketchy {
