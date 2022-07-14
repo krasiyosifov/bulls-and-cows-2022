@@ -13,6 +13,10 @@
     " crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap
     " rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
 </head>
 
 <body>
@@ -271,7 +275,9 @@
                     Cows
                 </h2>
             </div>
+            <button onclick="openCredits()" class="howToPlay">🛈</button>
             <div class="buttons">
+
                 <button class="buttonPlay" onclick="handleNewGameButton()">New Game</button>
                 <button id="credits"class="howToPlay" onclick="openModal()">Credits</button>
                 <button id="how_to_play" class="buttonPlay" onclick="openModal()">How to play</button>
@@ -348,8 +354,6 @@
             var btn = document.getElementById("how_to_play");
             function openModal() {
                 modalHowToPlay.style.display = "block";
-            }
-            if (modalHowToPlay) {
                 window.onclick = function (event) {
                     if (event.target == modalHowToPlay) {
                         modalHowToPlay.style.display = "none";
@@ -358,8 +362,10 @@
             }
             function closeModal() {
                 modalHowToPlay.style.display = "none";
+                window.onclick = function () { };
             }
         </script>
+
         <div class="modalContent">
             <button class="closeButton" type="button" onclick="closeModal()">X</button>
             <h1>How to play?</h1>
@@ -390,6 +396,36 @@
             <p>In the top right corner there is a question button. If you need to check the rules of the game again you
                 can press it.</p>
             <p>If both players win they can press the revenge button and play again.</p>
+
+        </div>
+    </div>
+
+    <div id="credits_scene_container" class="scene_container howToPlayModal">
+        <!-- here goes the HTML code -->
+        <script>
+            var modalCredits = document.getElementById("credits_scene_container");
+            function openCredits() {
+                modalCredits.style.display = "block";
+                window.onclick = function (event) {
+                    if (event.target == modalCredits) {
+                        modalCredits.style.display = "none";
+                    }
+                }
+            }
+            function closeCredits() {
+                modalCredits.style.display = "none";
+                window.onclick = function () { };
+            }
+        </script>
+
+        <div class="modalContent">
+            <button class="closeButton" type="button" onclick="closeCredits() ">X</button>
+            <h1>Credits</h1>
+            <p>Ivayla Todorova</p>
+            <p>Viktorya Novikova</p>
+            <p>Boyana Prodanova</p>
+            <p>Vanesa Selin</p>
+            <p>Ekaterina Denizova</p>
 
         </div>
     </div>
