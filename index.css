@@ -427,6 +427,11 @@ body {
         margin: 10px 0;
     }
 
+    .howToPlay {
+        width: 70px;
+        height: 70px;
+    }
+
     .responsiveContainer {
         width: 90%;
     }
